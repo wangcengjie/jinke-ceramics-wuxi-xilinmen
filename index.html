@@ -2314,7 +2314,18 @@
           </div>
 
           <div class="contact-grid">
-            <form class="form-card reveal" id="consultForm" name="consultation" method="POST" data-netlify="true" netlify-honeypot="website">
+            <form name="consultation" method="POST" netlify netlify-honeypot="website" hidden>
+              <input type="hidden" name="form-name" value="consultation" />
+              <input name="name" type="text" />
+              <input name="phone" type="tel" />
+              <input name="role" type="text" />
+              <input name="space" type="text" />
+              <textarea name="message"></textarea>
+              <input name="recipient_email" type="email" />
+              <input name="website" type="text" />
+            </form>
+
+            <form class="form-card reveal" id="consultForm" name="consultation" method="POST" netlify data-netlify="true" netlify-honeypot="website">
               <input type="hidden" name="form-name" value="consultation" />
               <input type="hidden" name="recipient_email" value="2637481884@qq.com" />
               <p class="hidden-field" aria-hidden="true">
