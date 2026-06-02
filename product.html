@@ -1,0 +1,964 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="金科瓷砖·岩板产品详情，展示奶油绒质感砖、臻白质感砖、状元真石釉、状元彩晶、锦绣丝绒、岩板大板、木纹砖与卫浴防滑砖。" />
+    <meta name="theme-color" content="#d83245" />
+    <title>产品详情 | 金科瓷砖·岩板</title>
+    <style>
+      :root {
+        --ink: #151b2a;
+        --muted: #687182;
+        --red: #d83245;
+        --red-soft: #ff7a86;
+        --bg: #f3f6fb;
+        --line: rgba(21, 27, 42, 0.12);
+        --shadow: 0 26px 80px rgba(22, 32, 48, 0.16);
+      }
+
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        font-family: Inter, "Noto Sans SC", "PingFang SC", "Microsoft YaHei", Arial, sans-serif;
+        color: var(--ink);
+        background: var(--bg);
+      }
+      a { color: inherit; text-decoration: none; }
+      img { display: block; max-width: 100%; }
+
+      .topbar {
+        position: sticky;
+        top: 0;
+        z-index: 20;
+        border-bottom: 1px solid rgba(21, 27, 42, 0.1);
+        background: rgba(255, 255, 255, 0.88);
+        backdrop-filter: blur(18px);
+      }
+      .nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: min(1180px, calc(100% - 40px));
+        height: 78px;
+        margin: 0 auto;
+      }
+      .logo { width: 190px; }
+      .nav a:last-child {
+        border: 1px solid rgba(216, 50, 69, 0.42);
+        border-radius: 6px;
+        padding: 11px 16px;
+        color: var(--red);
+      }
+
+      .hero {
+        display: grid;
+        grid-template-columns: 0.92fr 1.08fr;
+        gap: 54px;
+        align-items: center;
+        width: min(1180px, calc(100% - 40px));
+        margin: 0 auto;
+        padding: 76px 0 60px;
+      }
+      .kicker {
+        margin: 0 0 18px;
+        color: var(--red);
+        font-size: 14px;
+        font-weight: 700;
+      }
+      h1 {
+        margin: 0;
+        font-size: 58px;
+        line-height: 1.08;
+      }
+      .lead {
+        margin: 24px 0 0;
+        color: var(--muted);
+        font-size: 18px;
+        line-height: 1.9;
+      }
+      .actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-top: 34px;
+      }
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 50px;
+        border-radius: 6px;
+        padding: 0 20px;
+        font-weight: 700;
+      }
+      .btn--red { background: var(--red); color: #fff; }
+      .btn--light { border: 1px solid var(--line); background: #fff; color: var(--ink); }
+
+      .visual {
+        position: relative;
+        overflow: hidden;
+        border-radius: 8px;
+        background: #fff;
+        box-shadow: var(--shadow);
+      }
+      .visual img {
+        width: 100%;
+        aspect-ratio: 1.18;
+        object-fit: cover;
+      }
+      .badge {
+        position: absolute;
+        left: 22px;
+        top: 22px;
+        border-radius: 6px;
+        padding: 9px 12px;
+        color: #fff;
+        background: var(--red);
+        font-size: 13px;
+        font-weight: 700;
+      }
+
+      .section {
+        width: min(1180px, calc(100% - 40px));
+        margin: 0 auto 86px;
+      }
+      .grid {
+        display: grid;
+        grid-template-columns: 0.9fr 1.1fr;
+        gap: 28px;
+      }
+      .panel {
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        padding: 30px;
+        background: #fff;
+        box-shadow: 0 12px 36px rgba(22, 32, 48, 0.06);
+      }
+      h2 {
+        margin: 0 0 18px;
+        font-size: 30px;
+      }
+      .list {
+        display: grid;
+        gap: 14px;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        color: var(--muted);
+        line-height: 1.8;
+      }
+      .specs {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+      }
+      .spec {
+        border: 1px solid var(--line);
+        border-radius: 6px;
+        padding: 16px;
+        background: #f9fafc;
+      }
+      .spec span {
+        display: block;
+        color: var(--muted);
+        font-size: 13px;
+      }
+      .spec strong {
+        display: block;
+        margin-top: 6px;
+      }
+      .related {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 14px;
+      }
+      .related a {
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        overflow: hidden;
+        background: #fff;
+      }
+      .related img {
+        width: 100%;
+        aspect-ratio: 1.35;
+        object-fit: cover;
+      }
+      .related span {
+        display: block;
+        padding: 12px;
+        font-weight: 700;
+      }
+      .sample-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 14px;
+      }
+      .sample {
+        overflow: hidden;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: linear-gradient(180deg, #fff, #f8f9fc);
+      }
+      .sample img {
+        width: 100%;
+        aspect-ratio: 1.25;
+        object-fit: cover;
+      }
+      .sample div {
+        padding: 16px;
+      }
+      .sample span {
+        display: block;
+        color: var(--red);
+        font-size: 12px;
+        font-weight: 800;
+      }
+      .sample strong {
+        display: block;
+        margin-top: 7px;
+        font-size: 17px;
+      }
+      .sample p {
+        margin: 8px 0 0;
+        color: var(--muted);
+        line-height: 1.7;
+      }
+      .case-picks {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 18px;
+      }
+      .case-pick {
+        overflow: hidden;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: #fff;
+        box-shadow: 0 12px 34px rgba(22, 32, 48, 0.07);
+      }
+      .case-pick__media {
+        position: relative;
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) 112px;
+        overflow: hidden;
+        background: #e8edf4;
+      }
+      .case-pick__scene {
+        width: 100%;
+        height: 100%;
+        min-height: 236px;
+        object-fit: cover;
+      }
+      .case-pick__side {
+        display: grid;
+        grid-template-rows: minmax(0, 1fr) 82px;
+        min-width: 0;
+        border-left: 1px solid rgba(255, 255, 255, 0.72);
+      }
+      .case-pick__detail {
+        position: relative;
+        min-height: 0;
+        overflow: hidden;
+      }
+      .case-pick__detail img,
+      .case-pick__swatch {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .case-pick__detail span {
+        position: absolute;
+        left: 8px;
+        right: 8px;
+        bottom: 8px;
+        display: inline-flex;
+        justify-content: center;
+        border-radius: 999px;
+        padding: 5px 7px;
+        color: #fff;
+        background: rgba(17, 24, 39, 0.74);
+        font-size: 11px;
+        font-weight: 800;
+      }
+      .case-pick__swatch {
+        border-top: 1px solid rgba(255, 255, 255, 0.72);
+      }
+      .case-pick__body {
+        padding: 18px;
+      }
+      .case-pick span {
+        color: var(--red);
+        font-size: 12px;
+        font-weight: 800;
+      }
+      .case-pick strong {
+        display: block;
+        margin-top: 6px;
+        font-size: 19px;
+      }
+      .case-pick p {
+        margin: 10px 0 0;
+        color: var(--muted);
+        line-height: 1.75;
+      }
+      .case-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 14px;
+      }
+      .case-tags em {
+        border-radius: 999px;
+        padding: 7px 10px;
+        background: #f2f4f8;
+        color: #4d5668;
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 700;
+      }
+      .source-note {
+        margin: 16px 0 0;
+        color: var(--muted);
+        font-size: 13px;
+        line-height: 1.8;
+      }
+      .footer {
+        padding: 34px 20px;
+        color: rgba(255,255,255,.72);
+        background: #111827;
+        text-align: center;
+      }
+
+      @media (max-width: 880px) {
+        .hero, .grid { grid-template-columns: 1fr; }
+        h1 { font-size: 40px; }
+        .related, .sample-grid, .case-picks { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      }
+      @media (max-width: 520px) {
+        .nav { width: min(100% - 28px, 1180px); }
+        .logo { width: 156px; }
+        .hero, .section { width: min(100% - 28px, 1180px); }
+        .specs, .related, .sample-grid, .case-picks { grid-template-columns: 1fr; }
+        .case-pick__media { grid-template-columns: minmax(0, 1fr) 96px; }
+        .case-pick__scene { min-height: 210px; }
+        .case-pick__side { grid-template-rows: minmax(0, 1fr) 74px; }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="topbar">
+      <nav class="nav">
+        <a href="./index.html#top"><img class="logo" src="./assets/brand/jinke-logo.png?v=15" alt="金科瓷砖·岩板" /></a>
+        <a href="./index.html#products">返回产品中心</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div>
+          <p class="kicker" id="kicker">PRODUCT DETAIL</p>
+          <h1 id="title">产品详情</h1>
+          <p class="lead" id="summary"></p>
+          <div class="actions">
+            <a class="btn btn--red" href="tel:13861735222">电话咨询 13861735222</a>
+            <a class="btn btn--light" href="./index.html#contact">预约到店选样</a>
+          </div>
+        </div>
+        <div class="visual">
+          <span class="badge" id="badge">金科推荐</span>
+          <img id="heroImage" src="./assets/products/cream-velvet.jpg" alt="金科瓷砖产品图" />
+        </div>
+      </section>
+
+      <section class="section grid">
+        <article class="panel">
+          <h2>产品亮点</h2>
+          <ul class="list" id="features"></ul>
+        </article>
+        <article class="panel">
+          <h2>规格与适用空间</h2>
+          <div class="specs" id="specs"></div>
+        </article>
+      </section>
+
+      <section class="section">
+        <h2>样板砖选材</h2>
+        <div class="sample-grid" id="samples"></div>
+        <p class="source-note">注：样板砖图片用于线上初筛，具体库存、批次、规格与价格以无锡门店现场样板和当天报价为准。</p>
+      </section>
+
+      <section class="section">
+        <h2>空间效果展示</h2>
+        <div class="case-picks" id="casePicks"></div>
+      </section>
+
+      <section class="section">
+        <h2>更多产品</h2>
+        <div class="related" id="related"></div>
+      </section>
+    </main>
+
+    <footer class="footer">江苏省无锡市新吴区新世界D18栋-7号金科瓷砖店 · 13861735222</footer>
+
+    <script>
+      const products = {
+        "cream-velvet": {
+          title: "奶油绒质感砖",
+          badge: "门店主推系列",
+          image: "./assets/products/cream-velvet.jpg?v=cream1",
+          summary: "奶油绒质感砖主打低反光绒质柔光，覆盖雅纳特灰、宝莉拉灰、雅典娜奶黄与布鲁斯四款 750x1500mm 色系，适合全屋通铺、卧室、客餐厅与奶油风空间。",
+          features: ["绒质柔光表面降低强反光，空间更温润。", "灰色、奶黄、米黄多色可选，方便匹配不同软装。", "750x1500mm 大规格更适合全空间通铺。", "每款都配有真实案例图，便于客户直观看效果。"],
+          specs: { "推荐规格": "750x1500MM", "表面工艺": "奶油绒质感 / 柔光", "适用空间": "全空间、客厅、卧室", "风格建议": "奶油风、侘寂、现代简约" },
+          samples: [
+            { tag: "7KS15608T", name: "雅纳特灰", desc: "750x1500mm，灰色，全空间适用，纹理轻柔耐看。" },
+            { tag: "7KS15606T", name: "宝莉拉灰", desc: "750x1500mm，灰色，适合卧室、客厅与现代奶油风。" },
+            { tag: "7KS15601T", name: "雅典娜奶黄", desc: "750x1500mm，奶黄，空间更暖、更柔和。" },
+            { tag: "7KS15605T", name: "布鲁斯", desc: "750x1500mm，米黄，适合偏暖调的客厅与大平层。" }
+          ],
+          gallery: [
+            { image: "./assets/products/cream-yana-official.jpg?v=focus1", label: "雅纳特灰样板" },
+            { image: "./assets/products/cream-baolila-official.jpg?v=focus1", label: "宝莉拉灰样板" },
+            { image: "./assets/products/cream-athena-official.jpg?v=focus1", label: "雅典娜奶黄样板" },
+            { image: "./assets/products/cream-bruce-official.jpg?v=focus1", label: "布鲁斯样板" }
+          ],
+          cases: ["cream-yana-living", "cream-baolila-bedroom", "cream-athena-living", "cream-bruce-living"]
+        },
+        "gold-velvet": {
+          title: "臻白质感砖",
+          badge: "卡诺尔臻白",
+          image: "./assets/products/zhenbai-gubao-xiangya.jpg?v=focus1",
+          summary: "参考卡诺尔官网臻白质感砖系列整理，覆盖古堡米黄、香槟米黄、橘黄、象牙米白等温润色系，适合全屋柔光铺贴、奶油风和改善型住宅。",
+          features: ["臻白质感砖系列更偏温润、低刺激反光，适合大面积使用。", "米黄、香槟、象牙米白等色系能提升空间柔和度。", "750x1500mm 规格适合客餐厅、卧室和全屋通铺。", "同系列多色可做墙地呼应、深浅分区和样板间组合展示。"],
+          specs: { "推荐规格": "750x1500MM", "表面工艺": "臻白质感 / 柔光", "适用空间": "全空间、客餐厅、卧室", "风格建议": "奶油风、现代简约、温润家装" },
+          samples: [
+            { tag: "GB201", name: "古堡·米黄", desc: "臻白质感砖系列，温润米黄色，适合全屋柔和铺贴。" },
+            { tag: "GB202", name: "古堡·香槟米黄", desc: "香槟米黄基调，适合客餐厅和卧室营造高级暖感。" },
+            { tag: "GB203", name: "古堡·橘黄", desc: "更有温度的黄色系，适合局部空间和软装呼应。" },
+            { tag: "GB204", name: "古堡·象牙米白", desc: "象牙米白色，干净克制，适合现代奶油风全屋通铺。" }
+          ],
+          gallery: [
+            { image: "./assets/products/zhenbai-gubao-mihuang.jpg?v=focus1", label: "古堡米黄样板" },
+            { image: "./assets/products/zhenbai-gubao-xiangbin.jpg?v=focus1", label: "香槟米黄样板" },
+            { image: "./assets/products/zhenbai-gubao-xiangya.jpg?v=focus1", label: "象牙米白样板" }
+          ],
+          cases: ["residential", "villa", "hotel"]
+        },
+        "zhuangyuan-caijing": {
+          title: "状元彩晶",
+          badge: "金科彩晶",
+          image: "./assets/products/zhuangyuan-caijing.jpg",
+          summary: "状元彩晶主打晶感表面和灯光下的细节层次，适合高端客厅、展厅主视觉、商业前厅与工程项目。",
+          features: ["彩晶表面在灯光下更有细节和记忆点。", "耐看灰调适合商业和住宅双场景。", "适合背景墙、公区焦点面、展厅样板和工程项目选样。", "可与真石釉、岩板大板形成深浅材质搭配。"],
+          specs: { "推荐规格": "750x1500 / 900x1800", "表面工艺": "状元彩晶", "适用空间": "客厅、展厅、商业空间", "风格建议": "现代、高级灰、工程" },
+          samples: [
+            { tag: "状元彩晶", name: "浅晶灰", desc: "彩晶柔灰质感，适合客厅和展示空间。" },
+            { tag: "状元彩晶", name: "烟晶灰", desc: "中灰晶感层次，适合商业公区和背景墙。" },
+            { tag: "状元彩晶", name: "金晶灰", desc: "灰金纹理更有视觉记忆点，适合主视觉墙。" },
+            { tag: "状元彩晶", name: "深晶灰", desc: "深色彩晶质感，适合高端展厅和工程项目。" }
+          ],
+          gallery: [
+            { image: "./assets/products/zhuangyuan-caijing.jpg", label: "状元彩晶纹理" },
+            { image: "./assets/products/caijing-gold-gray.jpg?v=series1", label: "金晶灰样板" },
+            { image: "./assets/cases/commercial-detail-slab.jpg?v=detail1", label: "商业前厅细节" }
+          ],
+          cases: ["commercial", "villa", "hotel"]
+        },
+        "large-slab": {
+          title: "状元锦绣丝绒",
+          badge: "金科丝绒柔光",
+          image: "./assets/products/gold-silk-silver.jpg?v=focus1",
+          summary: "状元锦绣丝绒主打细腻柔光和丝绒触感，视觉更安静、更高级，适合大平层、别墅、奶油风和现代极简空间。",
+          features: ["丝绒柔光降低眩光，空间更柔和。", "浅灰、暖白、米灰等色系适合全屋通铺。", "砖面质感克制，方便搭配木作、金属和无主灯。", "适合设计师样板间、大平层住宅和改善型家装。"],
+          specs: { "推荐规格": "750x1500 / 900x1800", "表面工艺": "锦绣丝绒 / 柔光", "适用空间": "客餐厅、卧室、全屋通铺", "风格建议": "奶油风、现代极简、大平层" },
+          samples: [
+            { tag: "JS7501", name: "锦绣柔白", desc: "柔白底色，适合全屋明亮通铺。" },
+            { tag: "JS7502", name: "锦绣银灰", desc: "银灰丝绒质感，适合大平层和现代客厅。" },
+            { tag: "JS7503", name: "锦绣暖米", desc: "暖米灰基调，适合奶油风卧室和客餐厅。" },
+            { tag: "JS7504", name: "锦绣云灰", desc: "低饱和灰调，适合设计师样板间和精装改善。" }
+          ],
+          gallery: [
+            { image: "./assets/products/gold-snow-white.jpg?v=series1", label: "锦绣柔白样板" },
+            { image: "./assets/products/gold-silk-silver.jpg?v=series1", label: "锦绣银灰样板" },
+            { image: "./assets/products/living-warm-greige.jpg?v=series1", label: "锦绣暖米样板" }
+          ],
+          cases: ["villa", "commercial", "hotel"]
+        },
+        "living-room": {
+          title: "客厅瓷砖",
+          badge: "全屋优选",
+          image: "./assets/products/living-room.jpg",
+          summary: "明亮通透的空间基底，兼顾高级感、耐磨性与日常维护效率。",
+          features: ["白色石纹提升采光感。", "适合大面积客餐厅铺贴。", "耐磨易清洁，日常维护轻松。", "可根据户型选择浅灰、米白、暖灰或柔光石纹。"],
+          specs: { "推荐规格": "800x800 / 750x1500", "表面工艺": "柔光 / 亮光 / 大板瓷砖", "适用空间": "客厅、餐厅、过道", "风格建议": "现代、简欧、改善型住宅" },
+          samples: [
+            { tag: "官网参考", name: "云多拉浅灰", desc: "经典浅灰系，适合让客厅呈现淡雅自然的空间气质。" },
+            { tag: "官网参考", name: "米迪亚灰", desc: "高级灰基调，纹理深浅有致，适合大平层和改善型住宅。" },
+            { tag: "选样建议", name: "同厅通铺", desc: "客餐厅、过道和阳台同系通铺，可放大空间尺度。" }
+          ],
+          gallery: [
+            { image: "./assets/products/living-room.jpg", label: "明亮客厅砖面" },
+            { image: "./assets/cases/residential.jpg?v=photo1", label: "家装通铺应用" },
+            { image: "./assets/cases/residential-detail-floor.jpg?v=detail1", label: "客厅地面细节" }
+          ],
+          cases: ["residential", "villa", "commercial"]
+        },
+        "bathroom": {
+          title: "卫浴防滑砖",
+          badge: "湿区适配",
+          image: "./assets/products/bathroom.jpg",
+          summary: "防滑、防污、易清洁，以细腻石纹塑造酒店式卫浴体验。",
+          features: ["石纹肌理增强空间质感。", "多表面工艺适配干湿区。", "适合墙地一体搭配。", "湿区建议关注防滑等级、排水坡度和美缝耐污性。"],
+          specs: { "推荐规格": "600x1200 / 400x800", "表面工艺": "防滑柔光 / 哑光", "适用空间": "卫生间、淋浴区、洗衣区", "风格建议": "酒店风、现代、奶油卫浴" },
+          samples: [
+            { tag: "搭配方向", name: "墙地一体", desc: "同色不同面可兼顾整体感与湿区脚感。" },
+            { tag: "门店选样", name: "防滑地砖", desc: "适合卫生间、阳台、洗衣区等对安全性要求更高的区域。" },
+            { tag: "设计建议", name: "壁龛+大板墙面", desc: "减少切割碎片感，提升酒店式卫浴质感。" }
+          ],
+          gallery: [
+            { image: "./assets/products/bathroom.jpg", label: "卫浴石纹砖" },
+            { image: "./assets/products/bath-anti-slip-gray.jpg?v=series1", label: "防滑灰卫浴砖" },
+            { image: "./assets/cases/hotel.jpg", label: "酒店工程湿区" }
+          ],
+          cases: ["hotel", "residential", "commercial"]
+        },
+        "wood-grain": {
+          title: "木纹砖",
+          badge: "自然木感",
+          image: "./assets/products/wood-grain.jpg",
+          summary: "保留木质温度，同时拥有瓷砖耐用、防潮与稳定的工程属性。",
+          features: ["木质观感温暖自然。", "比木地板更耐潮、易维护。", "适合卧室、书房、阳台。", "可与奶油砖、微水泥砖和浅灰岩板组合做温暖现代空间。"],
+          specs: { "推荐规格": "200x1200 / 150x900", "表面工艺": "木纹哑光", "适用空间": "卧室、书房、阳台、商业休闲区", "风格建议": "原木风、现代、自然感空间" },
+          samples: [
+            { tag: "空间搭配", name: "原木风地面", desc: "适合卧室、书房和休闲区，兼顾木感与瓷砖耐用属性。" },
+            { tag: "施工建议", name: "错缝铺贴", desc: "根据砖长控制错缝比例，避免局部高低差。" },
+            { tag: "项目方向", name: "商业休闲区", desc: "适合咖啡店、会所、酒店客房等温暖材质场景。" }
+          ],
+          gallery: [
+            { image: "./assets/products/wood-grain.jpg", label: "自然木纹砖面" },
+            { image: "./assets/cases/hotel.jpg", label: "酒店与木色搭配" },
+            { image: "./assets/cases/atelier.jpg", label: "材质组合参考" }
+          ],
+          cases: ["hotel", "residential", "villa"]
+        },
+        "marble-look": {
+          title: "状元真石釉",
+          badge: "金科真石釉",
+          image: "./assets/products/marble-cloud-gray.jpg?v=focus1",
+          summary: "状元真石釉主打真实石材纹理与釉面层次，适合背景墙、玄关、客餐厅与商业主视觉。",
+          features: ["真石釉纹理接近天然石材肌理，空间识别度高。", "灰白、黑金、金纹等搭配方向适合高端住宅。", "比天然石更便于日常维护和项目批量使用。", "适合做电视背景墙、玄关主墙、展厅和酒店公区。"],
+          specs: { "推荐规格": "750x1500 / 900x1800", "表面工艺": "状元真石釉", "适用空间": "客厅、背景墙、玄关、商业空间", "风格建议": "现代轻奢、酒店式住宅、工程项目" },
+          samples: [
+            { tag: "真石釉", name: "真石云灰", desc: "灰白石纹，适合客厅和玄关主墙。" },
+            { tag: "真石釉", name: "真石鱼肚金", desc: "白底金纹，适合轻奢背景墙和别墅空间。" },
+            { tag: "真石釉", name: "真石黑金", desc: "深色石纹，适合商业空间和酒店公区。" },
+            { tag: "真石釉", name: "真石浅岩", desc: "浅色天然石感，适合墙地连续铺贴。" }
+          ],
+          gallery: [
+            { image: "./assets/products/marble-cloud-gray.jpg?v=series1", label: "真石云灰样板" },
+            { image: "./assets/products/marble-calacatta-gold.jpg?v=series1", label: "真石鱼肚金样板" },
+            { image: "./assets/products/marble-black-gold.jpg?v=series1", label: "真石黑金样板" }
+          ],
+          cases: ["villa", "residential", "commercial"]
+        },
+        "engineering": {
+          title: "岩板大板",
+          badge: "大规格岩板",
+          image: "./assets/products/slab-stars-gray.jpg?v=series1",
+          summary: "岩板大板适合背景墙、台面、商业公区与别墅大面积铺贴，强调大规格连续纹理和空间完整度。",
+          features: ["大规格铺贴更容易做出连续纹理和开阔尺度。", "适合电视背景墙、玄关墙、台面和商业公区。", "深浅灰、雪岩白、黑金等纹理可覆盖多种风格。", "工程项目可结合面积、批次和配送周期做选型。"],
+          specs: { "推荐规格": "900x1800 / 1200x2400", "表面工艺": "岩板 / 大板", "适用空间": "背景墙、台面、别墅、公区", "风格建议": "现代极简、轻奢、工程项目" },
+          samples: [
+            { tag: "岩板大板", name: "星耀灰", desc: "深灰岩板纹理，适合背景墙和商业公区。" },
+            { tag: "岩板大板", name: "海浪灰", desc: "流动灰纹理，适合大面积墙地连续铺贴。" },
+            { tag: "岩板大板", name: "雪岩白", desc: "明亮白色岩板，适合玄关、台面和现代空间。" },
+            { tag: "岩板大板", name: "黑金岩", desc: "黑金纹理适合主视觉墙和高端项目。" }
+          ],
+          gallery: [
+            { image: "./assets/products/slab-stars-gray.jpg?v=series1", label: "星耀灰岩板" },
+            { image: "./assets/products/slab-ocean-gray.jpg?v=series1", label: "海浪灰岩板" },
+            { image: "./assets/cases/villa-detail-wall.jpg?v=detail1", label: "别墅背景墙细节" }
+          ],
+          cases: ["commercial", "hotel", "villa"]
+        }
+      };
+
+      const seriesCases = {
+        "cream-velvet": [
+          {
+            label: "7KS15608T",
+            title: "雅纳特灰客餐厅通铺",
+            image: "./assets/cases/generated/effect-cream-yana.jpg?v=gen2",
+            swatch: "./assets/products/cream-yana-official.jpg?v=focus1",
+            desc: "以浅灰柔光地面统一客餐厨，减少强反光，适合大面积通铺和开放式家庭空间。",
+            points: ["全屋通铺", "浅灰柔光", "开放客餐厅"]
+          },
+          {
+            label: "7KS15606T",
+            title: "宝莉拉灰卧室套间",
+            image: "./assets/cases/generated/effect-cream-baolila.jpg?v=gen2",
+            swatch: "./assets/products/cream-baolila-official.jpg?v=focus1",
+            desc: "低饱和灰色让卧室更安静，搭配深木色背景和软包床，整体质感更稳。",
+            points: ["卧室地面", "低饱和灰", "深木搭配"]
+          },
+          {
+            label: "7KS15601T",
+            title: "雅典娜奶黄起居空间",
+            image: "./assets/cases/generated/effect-cream-athena.jpg?v=gen2",
+            swatch: "./assets/products/cream-athena-official.jpg?v=focus1",
+            desc: "奶黄色地面强化温暖感，适合白纱、浅木、绿植和低饱和软装组合。",
+            points: ["奶油风", "暖调地面", "轻软装"]
+          },
+          {
+            label: "7KS15605T",
+            title: "布鲁斯暖调客厅",
+            image: "./assets/cases/generated/effect-cream-bruce.jpg?v=gen2",
+            swatch: "./assets/products/cream-bruce-official.jpg?v=focus1",
+            desc: "米黄色绒质砖面适合大平层客厅，能在黑色背景和暖色沙发之间形成柔和过渡。",
+            points: ["米黄基底", "大平层", "柔光耐看"]
+          }
+        ],
+        "gold-velvet": [
+          {
+            label: "GB201",
+            title: "古堡米黄客餐厅",
+            image: "./assets/cases/generated/effect-zhenbai-mihuang.jpg?v=gen2",
+            swatch: "./assets/products/zhenbai-gubao-mihuang.jpg?v=focus1",
+            desc: "米黄色质感砖作为客餐厅底色，和浅木柜体、暖光灯带一起营造温润感。",
+            points: ["客餐厅", "米黄底色", "暖光搭配"]
+          },
+          {
+            label: "GB202",
+            title: "香槟米黄会客区",
+            image: "./assets/cases/generated/effect-zhenbai-xiangbin.jpg?v=gen2",
+            swatch: "./assets/products/zhenbai-gubao-xiangbin.jpg?v=focus1",
+            desc: "香槟米黄更适合想要明亮但不冷的空间，可用于会客区和开放书房。",
+            points: ["会客区", "香槟暖调", "明亮不冷"]
+          },
+          {
+            label: "GB203",
+            title: "古堡橘黄暖调客厅",
+            image: "./assets/cases/generated/effect-zhenbai-juhuang.jpg?v=gen2",
+            swatch: "./assets/products/zhenbai-gubao-juhuang.jpg?v=focus1",
+            desc: "橘黄色系适合小面积强化温度感，配合棕色家具和米白墙面更协调。",
+            points: ["暖调空间", "棕色家具", "局部提温"]
+          },
+          {
+            label: "GB204",
+            title: "象牙米白卧室",
+            image: "./assets/cases/generated/effect-zhenbai-xiangya.jpg?v=gen2",
+            swatch: "./assets/products/zhenbai-gubao-xiangya.jpg?v=focus1",
+            desc: "象牙米白干净克制，适合卧室、儿童房和希望空间更轻盈的户型。",
+            points: ["卧室", "象牙米白", "轻盈干净"]
+          }
+        ],
+        "zhuangyuan-caijing": [
+          {
+            label: "状元彩晶",
+            title: "浅晶灰展示前厅",
+            image: "./assets/cases/generated/effect-caijing-light.jpg?v=gen2",
+            swatch: "./assets/products/caijing-light-matched.jpg?v=match1",
+            desc: "浅晶灰适合展厅、前厅和商业公区，在轨道灯下能呈现更清晰的晶感层次。",
+            points: ["展示前厅", "晶感层次", "轨道灯"]
+          },
+          {
+            label: "状元彩晶",
+            title: "烟晶灰挑空客厅",
+            image: "./assets/cases/generated/effect-caijing-smoke.jpg?v=gen2",
+            swatch: "./assets/products/caijing-smoke-matched.jpg?v=match1",
+            desc: "中灰晶感砖适合做挑空电视墙和大面积地面，质感强但不抢软装。",
+            points: ["挑空客厅", "中灰石感", "电视墙"]
+          },
+          {
+            label: "状元彩晶",
+            title: "金晶灰酒店公区",
+            image: "./assets/cases/generated/effect-caijing-gold.jpg?v=gen2",
+            swatch: "./assets/products/caijing-gold-matched.jpg?v=match1",
+            desc: "灰金纹理适合酒店大堂、会所和商业接待区，灯光下更有记忆点。",
+            points: ["酒店公区", "灰金纹理", "接待区"]
+          },
+          {
+            label: "状元彩晶",
+            title: "深晶灰商业背景",
+            image: "./assets/cases/generated/effect-caijing-dark.jpg?v=gen2",
+            swatch: "./assets/products/caijing-dark-matched.jpg?v=match1",
+            desc: "深晶灰适合背景墙和主视觉面，配黑色金属线条可以拉高空间识别度。",
+            points: ["商业背景墙", "深色主材", "金属线条"]
+          }
+        ],
+        "large-slab": [
+          {
+            label: "锦绣丝绒",
+            title: "锦绣柔白客餐厅",
+            image: "./assets/cases/generated/effect-silk-white.jpg?v=gen2",
+            swatch: "./assets/products/gold-snow-white.jpg?v=series1",
+            desc: "柔白丝绒砖适合明亮客餐厅，地面干净，背景墙和柜体可以更有层次。",
+            points: ["柔白地面", "客餐厅", "明亮通铺"]
+          },
+          {
+            label: "锦绣丝绒",
+            title: "锦绣银灰卧室",
+            image: "./assets/cases/generated/effect-silk-silver.jpg?v=gen2",
+            swatch: "./assets/products/gold-silk-silver.jpg?v=series1",
+            desc: "银灰柔光适合卧室和套间，视觉更安静，搭配深木饰面更显高级。",
+            points: ["银灰柔光", "卧室套间", "深木饰面"]
+          },
+          {
+            label: "锦绣丝绒",
+            title: "锦绣暖米起居区",
+            image: "./assets/cases/generated/effect-silk-warm.jpg?v=gen2",
+            swatch: "./assets/products/living-warm-greige.jpg?v=series1",
+            desc: "暖米灰适合起居区和亲子空间，柔和不刺眼，也方便后期软装更换。",
+            points: ["暖米灰", "起居区", "软装友好"]
+          },
+          {
+            label: "锦绣丝绒",
+            title: "锦绣云灰大平层",
+            image: "./assets/cases/generated/effect-silk-cloud.jpg?v=gen2",
+            swatch: "./assets/products/gold-cloud-gray.jpg?v=series1",
+            desc: "云灰色系适合大平层全屋通铺，低饱和色调能稳住空间气质。",
+            points: ["云灰基调", "大平层", "全屋通铺"]
+          }
+        ],
+        "marble-look": [
+          {
+            label: "状元真石釉",
+            title: "真石云灰挑空客厅",
+            image: "./assets/cases/generated/effect-marble-cloud.jpg?v=gen2",
+            swatch: "./assets/products/marble-cloud-gray.jpg?v=series1",
+            desc: "云灰真石纹适合电视背景墙和大面积地面，整体沉稳，适合别墅和大平层客厅。",
+            points: ["挑空客厅", "真石云灰", "背景墙"]
+          },
+          {
+            label: "状元真石釉",
+            title: "鱼肚金玄关主墙",
+            image: "./assets/cases/generated/effect-marble-calacatta.jpg?v=gen2",
+            swatch: "./assets/products/marble-calacatta-gold.jpg?v=series1",
+            desc: "白底金纹更适合玄关、端景和主墙，能用较少面积做出轻奢视觉重点。",
+            points: ["玄关端景", "鱼肚金", "轻奢主墙"]
+          },
+          {
+            label: "状元真石釉",
+            title: "黑金岩商业背景",
+            image: "./assets/cases/generated/effect-marble-black.jpg?v=gen2",
+            swatch: "./assets/products/marble-black-gold.jpg?v=series1",
+            desc: "深色真石釉适合作为商业空间主视觉面，配合灯带和金属线条更有识别度。",
+            points: ["商业空间", "黑金岩", "主视觉面"]
+          },
+          {
+            label: "状元真石釉",
+            title: "浅岩白家装通铺",
+            image: "./assets/cases/generated/effect-marble-carrara.jpg?v=gen2",
+            swatch: "./assets/products/marble-carrara-white.jpg?v=series1",
+            desc: "浅岩白能保持空间明亮，适合墙地连续铺贴和现代简约家装。",
+            points: ["家装通铺", "浅岩白", "明亮空间"]
+          }
+        ],
+        "engineering": [
+          {
+            label: "岩板大板",
+            title: "星耀灰背景墙",
+            image: "./assets/cases/generated/effect-slab-stars.jpg?v=gen2",
+            swatch: "./assets/products/slab-stars-gray.jpg?v=series1",
+            desc: "星耀灰岩板适合挑空客厅和大尺度电视墙，纹理连续，视觉更完整。",
+            points: ["背景墙", "大规格", "连续纹理"]
+          },
+          {
+            label: "岩板大板",
+            title: "海浪灰商业前厅",
+            image: "./assets/cases/generated/effect-slab-ocean.jpg?v=gen2",
+            swatch: "./assets/products/slab-ocean-gray.jpg?v=series1",
+            desc: "流动灰纹理适合商业前厅、接待台和墙面组合，让入口更有记忆点。",
+            points: ["商业前厅", "海浪灰", "接待台"]
+          },
+          {
+            label: "岩板大板",
+            title: "雪岩白酒店公区",
+            image: "./assets/cases/generated/effect-slab-snow.jpg?v=gen2",
+            swatch: "./assets/products/slab-snow-stone.jpg?v=series1",
+            desc: "雪岩白岩板适合酒店大堂和明亮公区，能兼顾开阔感和高级感。",
+            points: ["酒店公区", "雪岩白", "明亮大堂"]
+          },
+          {
+            label: "岩板大板",
+            title: "黑金岩端景墙",
+            image: "./assets/cases/generated/effect-slab-black.jpg?v=gen2",
+            swatch: "./assets/products/slab-black-gold.jpg?v=series1",
+            desc: "黑金岩适合作为端景墙或局部焦点，配合暖光更显质感。",
+            points: ["端景墙", "黑金岩", "暖光搭配"]
+          }
+        ],
+        "wood-grain": [
+          {
+            label: "木纹砖",
+            title: "浅橡木卧室",
+            image: "./assets/cases/generated/effect-wood-light.jpg?v=gen2",
+            swatch: "./assets/products/wood-light-oak.jpg?v=series1",
+            desc: "浅橡木木纹砖能保留木质温度，同时更耐潮耐磨，适合卧室和儿童房。",
+            points: ["卧室地面", "浅橡木", "温润自然"]
+          },
+          {
+            label: "木纹砖",
+            title: "胡桃木会所走廊",
+            image: "./assets/cases/generated/effect-wood-walnut.jpg?v=gen2",
+            swatch: "./assets/products/wood-walnut.jpg?v=series1",
+            desc: "深胡桃木适合酒店客房、会所走廊和休闲区，和浅灰墙面形成稳定对比。",
+            points: ["会所走廊", "胡桃木", "深浅对比"]
+          },
+          {
+            label: "木纹砖",
+            title: "烟熏灰木书房",
+            image: "./assets/cases/generated/effect-wood-ash.jpg?v=gen2",
+            swatch: "./assets/products/wood-ash-gray.jpg?v=series1",
+            desc: "灰木纹更现代，适合书房、阳台和简约公寓，空间不容易显杂乱。",
+            points: ["书房阳台", "灰木纹", "现代简约"]
+          },
+          {
+            label: "木纹砖",
+            title: "暖柚木休闲区",
+            image: "./assets/cases/generated/effect-wood-teak.jpg?v=gen2",
+            swatch: "./assets/products/wood-warm-teak.jpg?v=series1",
+            desc: "暖柚木适合茶室、民宿和商业休闲区，兼顾自然氛围与维护效率。",
+            points: ["休闲区", "暖柚木", "易维护"]
+          }
+        ],
+        "bathroom": [
+          {
+            label: "卫浴防滑",
+            title: "石纹白酒店卫浴",
+            image: "./assets/cases/generated/effect-bath-white.jpg?v=gen2",
+            swatch: "./assets/products/bath-stone-white.jpg?v=series1",
+            desc: "石纹白适合小卫生间和酒店卫浴，提升明亮感，墙地一体更清爽。",
+            points: ["酒店卫浴", "石纹白", "墙地一体"]
+          },
+          {
+            label: "卫浴防滑",
+            title: "防滑灰淋浴区",
+            image: "./assets/cases/generated/effect-bath-gray.jpg?v=gen2",
+            swatch: "./assets/products/bath-anti-slip-gray.jpg?v=series1",
+            desc: "防滑灰适合淋浴区、洗衣区和阳台，优先保证脚感安全和日常清洁。",
+            points: ["淋浴区", "防滑灰", "湿区安全"]
+          },
+          {
+            label: "卫浴防滑",
+            title: "暖砂米奶油卫浴",
+            image: "./assets/cases/generated/effect-bath-greige.jpg?v=gen2",
+            swatch: "./assets/products/bath-warm-greige.jpg?v=series1",
+            desc: "暖砂米能让卫浴空间更柔和，适合奶油风住宅和亲子家庭。",
+            points: ["奶油卫浴", "暖砂米", "柔和空间"]
+          },
+          {
+            label: "卫浴防滑",
+            title: "深岩灰公卫",
+            image: "./assets/cases/generated/effect-bath-slate.jpg?v=gen2",
+            swatch: "./assets/products/bath-dark-slate.jpg?v=series1",
+            desc: "深岩灰适合公卫和酒店风卫浴，耐看耐脏，便于做干湿分离。",
+            points: ["公卫", "深岩灰", "酒店风"]
+          }
+        ]
+      };
+
+      const params = new URLSearchParams(location.search);
+      const focusProductIds = ["cream-velvet", "gold-velvet", "marble-look", "zhuangyuan-caijing", "large-slab", "engineering", "wood-grain", "bathroom"];
+      const id = products[params.get("id")] ? params.get("id") : "cream-velvet";
+      const item = products[id];
+      document.title = `${item.title} | 金科瓷砖·岩板`;
+      document.getElementById("title").textContent = item.title;
+      document.getElementById("badge").textContent = item.badge;
+      document.getElementById("summary").textContent = item.summary;
+      document.getElementById("heroImage").src = item.image;
+      document.getElementById("heroImage").alt = item.title;
+      document.getElementById("features").innerHTML = item.features.map((text) => `<li>${text}</li>`).join("");
+      document.getElementById("specs").innerHTML = Object.entries(item.specs).map(([key, value]) => `<div class="spec"><span>${key}</span><strong>${value}</strong></div>`).join("");
+      const seriesSamples = {
+        "cream-velvet": [
+          { tag: "7KS15608T", name: "雅纳特灰", desc: "750x1500MM，灰色，适合客餐厅与全空间通铺。", image: "./assets/products/cream-yana-official.jpg?v=focus1" },
+          { tag: "7KS15606T", name: "宝莉拉灰", desc: "750x1500MM，灰色，适合卧室、套房和现代奶油风。", image: "./assets/products/cream-baolila-official.jpg?v=focus1" },
+          { tag: "7KS15601T", name: "雅典娜奶黄", desc: "750x1500MM，奶黄，空间更温暖柔和。", image: "./assets/products/cream-athena-official.jpg?v=focus1" },
+          { tag: "7KS15605T", name: "布鲁斯", desc: "750x1500MM，米黄，适合暖调客厅与大平层。", image: "./assets/products/cream-bruce-official.jpg?v=focus1" }
+        ],
+        "gold-velvet": [
+          { tag: "GB201", name: "古堡·米黄", desc: "臻白质感砖系列，温润米黄色，适合全屋柔和铺贴。", image: "./assets/products/zhenbai-gubao-mihuang.jpg?v=focus1" },
+          { tag: "GB202", name: "古堡·香槟米黄", desc: "香槟米黄基调，适合客餐厅和卧室营造高级暖感。", image: "./assets/products/zhenbai-gubao-xiangbin.jpg?v=focus1" },
+          { tag: "GB203", name: "古堡·橘黄", desc: "更有温度的黄色系，适合局部空间和软装呼应。", image: "./assets/products/zhenbai-gubao-juhuang.jpg?v=focus1" },
+          { tag: "GB204", name: "古堡·象牙米白", desc: "象牙米白色，干净克制，适合现代奶油风全屋通铺。", image: "./assets/products/zhenbai-gubao-xiangya.jpg?v=focus1" }
+        ],
+        "zhuangyuan-caijing": [
+          { tag: "状元彩晶", name: "浅晶灰", desc: "彩晶柔灰质感，适合客厅和展示空间。", image: "./assets/products/caijing-light-gray.jpg?v=series1" },
+          { tag: "状元彩晶", name: "烟晶灰", desc: "中灰晶感层次，适合商业公区和背景墙。", image: "./assets/products/caijing-smoke-gray.jpg?v=series1" },
+          { tag: "状元彩晶", name: "金晶灰", desc: "灰金纹理更有视觉记忆点，适合主视觉墙。", image: "./assets/products/caijing-gold-gray.jpg?v=series1" },
+          { tag: "状元彩晶", name: "深晶灰", desc: "深色彩晶质感，适合高端展厅和工程项目。", image: "./assets/products/caijing-dark-gray.jpg?v=series1" }
+        ],
+        "large-slab": [
+          { tag: "锦绣丝绒", name: "锦绣柔白", desc: "柔白底色，适合全屋明亮通铺。", image: "./assets/products/gold-snow-white.jpg?v=series1" },
+          { tag: "锦绣丝绒", name: "锦绣银灰", desc: "银灰丝绒质感，适合大平层和现代客厅。", image: "./assets/products/gold-silk-silver.jpg?v=series1" },
+          { tag: "锦绣丝绒", name: "锦绣暖米", desc: "暖米灰基调，适合奶油风卧室和客餐厅。", image: "./assets/products/living-warm-greige.jpg?v=series1" },
+          { tag: "锦绣丝绒", name: "锦绣云灰", desc: "低饱和灰调，适合设计师样板间和精装改善。", image: "./assets/products/gold-cloud-gray.jpg?v=series1" }
+        ],
+        "living-room": [
+          { tag: "LR8001", name: "卡拉拉白", desc: "白色石纹，适合明亮客餐厅通铺。", image: "./assets/products/living-carrara-white.jpg?v=series1" },
+          { tag: "LR8002", name: "云多拉浅灰", desc: "浅灰柔和纹理，适合改善型住宅。", image: "./assets/products/living-cloud-gray.jpg?v=series1" },
+          { tag: "LR8003", name: "暖米灰", desc: "暖灰底色，适合现代奶油风客厅。", image: "./assets/products/living-warm-greige.jpg?v=series1" },
+          { tag: "LR8004", name: "柔银灰", desc: "干净银灰调，适合大平层和精装改造。", image: "./assets/products/living-soft-silver.jpg?v=series1" }
+        ],
+        bathroom: [
+          { tag: "BR6001", name: "石纹白", desc: "清爽明亮，适合小卫生间放大空间。", image: "./assets/products/bath-stone-white.jpg?v=series1" },
+          { tag: "BR6002", name: "防滑灰", desc: "灰色防滑质感，适合淋浴区和洗衣区。", image: "./assets/products/bath-anti-slip-gray.jpg?v=series1" },
+          { tag: "BR6003", name: "暖砂米", desc: "温和米灰调，适合奶油卫浴空间。", image: "./assets/products/bath-warm-greige.jpg?v=series1" },
+          { tag: "BR6004", name: "深岩灰", desc: "深灰酒店风，适合干湿分离和公卫。", image: "./assets/products/bath-dark-slate.jpg?v=series1" }
+        ],
+        "wood-grain": [
+          { tag: "WG1201", name: "浅橡木", desc: "浅木色温润自然，适合卧室和书房。", image: "./assets/products/wood-light-oak.jpg?v=series1" },
+          { tag: "WG1202", name: "胡桃木", desc: "深木色稳重，适合轻奢和会所空间。", image: "./assets/products/wood-walnut.jpg?v=series1" },
+          { tag: "WG1203", name: "烟熏灰木", desc: "灰木纹更现代，适合简约公寓。", image: "./assets/products/wood-ash-gray.jpg?v=series1" },
+          { tag: "WG1204", name: "暖柚木", desc: "暖木调，适合阳台、茶室与休闲区。", image: "./assets/products/wood-warm-teak.jpg?v=series1" }
+        ],
+        "marble-look": [
+          { tag: "状元真石釉", name: "真石云灰", desc: "灰白石纹，适合客厅和玄关主墙。", image: "./assets/products/marble-cloud-gray.jpg?v=series1" },
+          { tag: "状元真石釉", name: "真石鱼肚金", desc: "白底金纹，适合轻奢背景墙和别墅空间。", image: "./assets/products/marble-calacatta-gold.jpg?v=series1" },
+          { tag: "状元真石釉", name: "真石黑金", desc: "深色石纹，适合商业空间和酒店公区。", image: "./assets/products/marble-black-gold.jpg?v=series1" },
+          { tag: "状元真石釉", name: "真石浅岩", desc: "浅色天然石感，适合墙地连续铺贴。", image: "./assets/products/marble-carrara-white.jpg?v=series1" }
+        ],
+        engineering: [
+          { tag: "岩板大板", name: "星耀灰", desc: "深灰岩板纹理，适合背景墙和商业公区。", image: "./assets/products/slab-stars-gray.jpg?v=series1" },
+          { tag: "岩板大板", name: "海浪灰", desc: "流动灰纹理，适合大面积墙地连续铺贴。", image: "./assets/products/slab-ocean-gray.jpg?v=series1" },
+          { tag: "岩板大板", name: "雪岩白", desc: "明亮白色岩板，适合玄关、台面和现代空间。", image: "./assets/products/slab-snow-stone.jpg?v=series1" },
+          { tag: "岩板大板", name: "黑金岩", desc: "黑金纹理适合主视觉墙和高端项目。", image: "./assets/products/slab-black-gold.jpg?v=series1" }
+        ]
+      };
+      document.getElementById("samples").innerHTML = (seriesSamples[id] || item.samples.map((sample) => ({ ...sample, image: item.image })))
+        .map((sample) => `<article class="sample"><img src="${sample.image}" alt="${sample.name}" loading="lazy"><div><span>${sample.tag}</span><strong>${sample.name}</strong><p>${sample.desc}</p></div></article>`)
+        .join("");
+      const detailFromScene = (src) => src.replace(/\.jpg(?:\?[^"]*)?$/, "-detail.jpg?v=detail2");
+      document.getElementById("casePicks").innerHTML = (seriesCases[id] || [])
+        .map((project) => {
+          const detail = project.detail || detailFromScene(project.image);
+          return `
+          <article class="case-pick">
+            <div class="case-pick__media">
+              <img class="case-pick__scene" src="${project.image}" alt="${project.title}" loading="lazy">
+              <div class="case-pick__side">
+                <div class="case-pick__detail">
+                  <img src="${detail}" alt="${project.title}局部铺贴细节" loading="lazy">
+                  <span>同场景细节</span>
+                </div>
+                <img class="case-pick__swatch" src="${project.swatch}" alt="${project.title}样板砖面" loading="lazy">
+              </div>
+            </div>
+            <div class="case-pick__body">
+              <span>${project.label}</span>
+              <strong>${project.title}</strong>
+              <p>${project.desc}</p>
+              <div class="case-tags">${project.points.map((point) => `<em>${point}</em>`).join("")}</div>
+            </div>
+          </article>
+        `;
+        })
+        .join("");
+      document.getElementById("related").innerHTML = focusProductIds
+        .filter((key) => key !== id)
+        .map((key) => [key, products[key]])
+        .map(([key, value]) => `<a href="./product.html?id=${key}"><img src="${value.image}" alt="${value.title}" loading="lazy"><span>${value.title}</span></a>`)
+        .join("");
+    </script>
+  </body>
+</html>

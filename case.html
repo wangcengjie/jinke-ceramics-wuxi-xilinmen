@@ -1,0 +1,473 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="金科瓷砖·岩板应用案例详情，展示别墅、家装空间、商业空间、酒店工程与展厅选材场景。" />
+    <meta name="theme-color" content="#d83245" />
+    <title>案例详情 | 金科瓷砖·岩板</title>
+    <style>
+      :root {
+        --ink: #151b2a;
+        --muted: #687182;
+        --red: #d83245;
+        --bg: #f3f6fb;
+        --line: rgba(21, 27, 42, 0.12);
+        --shadow: 0 26px 80px rgba(22, 32, 48, 0.16);
+      }
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        font-family: Inter, "Noto Sans SC", "PingFang SC", "Microsoft YaHei", Arial, sans-serif;
+        color: var(--ink);
+        background: var(--bg);
+      }
+      a { color: inherit; text-decoration: none; }
+      img { display: block; max-width: 100%; }
+      .topbar {
+        position: sticky;
+        top: 0;
+        z-index: 20;
+        border-bottom: 1px solid rgba(21, 27, 42, 0.1);
+        background: rgba(255, 255, 255, 0.88);
+        backdrop-filter: blur(18px);
+      }
+      .nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: min(1180px, calc(100% - 40px));
+        height: 78px;
+        margin: 0 auto;
+      }
+      .logo { width: 190px; }
+      .nav a:last-child {
+        border: 1px solid rgba(216, 50, 69, 0.42);
+        border-radius: 6px;
+        padding: 11px 16px;
+        color: var(--red);
+      }
+      .hero {
+        width: min(1180px, calc(100% - 40px));
+        margin: 0 auto;
+        padding: 66px 0 42px;
+      }
+      .kicker {
+        margin: 0 0 16px;
+        color: var(--red);
+        font-size: 14px;
+        font-weight: 700;
+      }
+      h1 {
+        max-width: 900px;
+        margin: 0;
+        font-size: 56px;
+        line-height: 1.08;
+      }
+      .lead {
+        max-width: 760px;
+        margin: 22px 0 0;
+        color: var(--muted);
+        font-size: 18px;
+        line-height: 1.9;
+      }
+      .cover {
+        width: min(1180px, calc(100% - 40px));
+        margin: 0 auto 42px;
+        overflow: hidden;
+        border-radius: 8px;
+        background: #fff;
+        box-shadow: var(--shadow);
+      }
+      .cover img {
+        width: 100%;
+        max-height: 620px;
+        object-fit: cover;
+      }
+      .section {
+        width: min(1180px, calc(100% - 40px));
+        margin: 0 auto 82px;
+      }
+      .grid {
+        display: grid;
+        grid-template-columns: 0.9fr 1.1fr;
+        gap: 28px;
+      }
+      .panel {
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        padding: 30px;
+        background: #fff;
+        box-shadow: 0 12px 36px rgba(22, 32, 48, 0.06);
+      }
+      h2 {
+        margin: 0 0 18px;
+        font-size: 30px;
+      }
+      .list {
+        display: grid;
+        gap: 14px;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        color: var(--muted);
+        line-height: 1.8;
+      }
+      .chips {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+      .chips span {
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        padding: 10px 13px;
+        background: #f9fafc;
+        font-weight: 700;
+      }
+      .case-gallery {
+        display: grid;
+        grid-template-columns: 1.15fr 0.85fr;
+        gap: 14px;
+      }
+      .case-gallery__stack {
+        display: grid;
+        gap: 14px;
+      }
+      .case-gallery__item {
+        position: relative;
+        overflow: hidden;
+        border-radius: 8px;
+        background: #111827;
+        min-height: 250px;
+      }
+      .case-gallery__item--large {
+        min-height: 520px;
+      }
+      .case-gallery__item img {
+        width: 100%;
+        height: 100%;
+        min-height: inherit;
+        object-fit: cover;
+        transition: transform 700ms ease;
+      }
+      .case-gallery__item:hover img {
+        transform: scale(1.04);
+      }
+      .case-gallery__item span {
+        position: absolute;
+        left: 16px;
+        bottom: 16px;
+        border-radius: 999px;
+        padding: 8px 11px;
+        color: #fff;
+        background: rgba(17, 24, 39, 0.72);
+        backdrop-filter: blur(12px);
+        font-size: 12px;
+        font-weight: 800;
+      }
+      .product-picks,
+      .more-cases {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 14px;
+      }
+      .product-pick,
+      .more-case {
+        overflow: hidden;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: #fff;
+        box-shadow: 0 12px 36px rgba(22, 32, 48, 0.06);
+      }
+      .product-pick img,
+      .more-case img {
+        width: 100%;
+        aspect-ratio: 1.35;
+        object-fit: cover;
+      }
+      .product-pick div,
+      .more-case div {
+        padding: 14px;
+      }
+      .product-pick span,
+      .more-case span {
+        color: var(--red);
+        font-size: 12px;
+        font-weight: 800;
+      }
+      .product-pick strong,
+      .more-case strong {
+        display: block;
+        margin-top: 6px;
+      }
+      .cta {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: 24px;
+        align-items: center;
+        border-radius: 8px;
+        padding: 30px;
+        color: #fff;
+        background: #111827;
+      }
+      .cta p { margin: 8px 0 0; color: rgba(255,255,255,.66); }
+      .btn {
+        display: inline-flex;
+        min-height: 50px;
+        align-items: center;
+        justify-content: center;
+        border-radius: 6px;
+        padding: 0 20px;
+        background: var(--red);
+        color: #fff;
+        font-weight: 700;
+      }
+      .footer {
+        padding: 34px 20px;
+        color: rgba(255,255,255,.72);
+        background: #111827;
+        text-align: center;
+      }
+      @media (max-width: 880px) {
+        .grid, .cta, .case-gallery { grid-template-columns: 1fr; }
+        .product-picks, .more-cases { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+        .case-gallery__item--large { min-height: 360px; }
+        h1 { font-size: 40px; }
+      }
+      @media (max-width: 520px) {
+        .nav, .hero, .cover, .section { width: min(100% - 28px, 1180px); }
+        .logo { width: 156px; }
+        .product-picks, .more-cases { grid-template-columns: 1fr; }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="topbar">
+      <nav class="nav">
+        <a href="./index.html#top"><img class="logo" src="./assets/brand/jinke-logo.png?v=15" alt="金科瓷砖·岩板" /></a>
+        <a href="./index.html#cases">返回案例中心</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <p class="kicker" id="kicker">PROJECT DETAIL</p>
+        <h1 id="title">案例详情</h1>
+        <p class="lead" id="summary"></p>
+      </section>
+      <div class="cover"><img id="cover" src="./assets/cases/generated/project-villa.jpg?v=gen2" alt="金科瓷砖案例图" /></div>
+      <section class="section">
+        <h2>案例图集</h2>
+        <div class="case-gallery" id="caseGallery"></div>
+      </section>
+      <section class="section grid">
+        <article class="panel">
+          <h2>空间需求</h2>
+          <ul class="list" id="needs"></ul>
+        </article>
+        <article class="panel">
+          <h2>推荐产品</h2>
+          <div class="chips" id="products"></div>
+        </article>
+      </section>
+      <section class="section">
+        <h2>可搭配产品</h2>
+        <div class="product-picks" id="productPicks"></div>
+      </section>
+      <section class="section">
+        <h2>更多案例</h2>
+        <div class="more-cases" id="moreCases"></div>
+      </section>
+      <section class="section">
+        <div class="cta">
+          <div>
+            <h2>带着户型或效果图到店选样</h2>
+            <p>江苏省无锡市新吴区新世界D18栋-7号金科瓷砖店，门店电话 13861735222。</p>
+          </div>
+          <a class="btn" href="tel:13861735222">电话咨询</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">金科瓷砖·岩板无锡新吴区门店 · 新世界D18栋-7号</footer>
+
+    <script>
+      const cases = {
+        villa: {
+          title: "别墅案例",
+          image: "./assets/cases/generated/project-villa.jpg?v=gen2",
+          summary: "以岩板背景墙和深色石纹建立稳定视觉重心，适合挑空客厅、会客区和私宅公共空间。",
+          needs: ["大面积墙地铺贴需要控制缝隙和纹理连续性。", "公共空间需要耐磨、易清洁和长期稳定。", "色彩建议在高级灰和浅色柔光之间建立层次。"],
+          products: ["岩板大板", "状元真石釉", "状元彩晶", "臻白质感砖"],
+          productIds: ["engineering", "marble-look", "zhuangyuan-caijing", "gold-velvet"],
+          gallery: [
+            { image: "./assets/cases/generated/project-villa.jpg?v=gen2", label: "别墅岩板空间效果" },
+            { image: "./assets/cases/generated/project-villa-focus-wall.jpg?v=detail2", label: "背景墙放大细节" },
+            { image: "./assets/cases/generated/project-villa-focus-floor.jpg?v=detail2", label: "客厅地面铺贴细节" }
+          ]
+        },
+        showroom: {
+          title: "店内环境",
+          image: "./assets/brand/store-polished-1.jpg",
+          summary: "无锡新吴区金科瓷砖·岩板门店实拍，展示前台品牌墙、大板通道、样板走廊与洽谈区，方便客户到店直接看砖面、看尺寸、看空间搭配。",
+          needs: ["客户需要快速对比不同花色、光感与规格。", "设计师和装修公司需要一站式看样与选型。", "工程客户关注批次、库存、配送和供货稳定性。"],
+          products: ["奶油绒质感砖", "臻白质感砖", "状元真石釉", "状元彩晶"],
+          productIds: ["cream-velvet", "gold-velvet", "zhuangyuan-caijing"],
+          gallery: [
+            { image: "./assets/brand/store-polished-1.jpg", label: "前台与品牌墙" },
+            { image: "./assets/brand/store-polished-6.jpg", label: "选样通道与洽谈区" },
+            { image: "./assets/brand/store-polished-2.jpg", label: "荣誉展示区" },
+            { image: "./assets/brand/store-polished-3.jpg", label: "样板走廊与色板区" },
+            { image: "./assets/brand/store-polished-4.jpg", label: "大板样板通道" },
+            { image: "./assets/brand/store-polished-5.jpg", label: "窗边展示与样板区" }
+          ]
+        },
+        "cream-yana-living": {
+          title: "雅纳特灰客餐厅案例",
+          image: "./assets/cases/generated/effect-cream-yana.jpg?v=gen2",
+          summary: "7KS15608T 雅纳特灰，规格 750x1500mm，灰色奶油绒质感砖，适合客餐厅、开放式厨房与全空间通铺。",
+          needs: ["客餐厅通铺需要浅灰底色保持空间明亮。", "柔光表面适合大面积使用，减少眩光。", "建议搭配浅木色、白色柜体与黑色点缀。"],
+          products: ["7KS15608T 雅纳特灰", "奶油绒质感砖", "状元锦绣丝绒"],
+          productIds: ["cream-velvet", "gold-velvet", "large-slab"],
+          gallery: [
+            { image: "./assets/cases/generated/effect-cream-yana.jpg?v=gen2", label: "雅纳特灰客餐厅案例" },
+            { image: "./assets/products/cream-yana-gray.jpg?v=cream1", label: "雅纳特灰样板砖面" },
+            { image: "./assets/cases/generated/effect-cream-yana-detail.jpg?v=detail2", label: "雅纳特灰同场景通铺细节" }
+          ]
+        },
+        "cream-baolila-bedroom": {
+          title: "宝莉拉灰卧室案例",
+          image: "./assets/cases/generated/effect-cream-baolila.jpg?v=gen2",
+          summary: "7KS15606T 宝莉拉灰，规格 750x1500mm，灰色奶油绒质感砖，适合卧室、套房与低饱和现代空间。",
+          needs: ["卧室地面需要温和、不刺眼的柔光效果。", "灰色砖面便于搭配深木色背景墙。", "大规格铺贴可弱化缝隙，让空间更完整。"],
+          products: ["7KS15606T 宝莉拉灰", "奶油绒质感砖", "臻白质感砖"],
+          productIds: ["cream-velvet", "gold-velvet", "large-slab"],
+          gallery: [
+            { image: "./assets/cases/generated/effect-cream-baolila.jpg?v=gen2", label: "宝莉拉灰卧室案例" },
+            { image: "./assets/products/cream-baolila-gray.jpg?v=cream1", label: "宝莉拉灰样板砖面" },
+            { image: "./assets/cases/generated/effect-cream-baolila-detail.jpg?v=detail2", label: "宝莉拉灰同场景地面细节" }
+          ]
+        },
+        "cream-athena-living": {
+          title: "雅典娜奶黄客厅案例",
+          image: "./assets/cases/generated/effect-cream-athena.jpg?v=gen2",
+          summary: "7KS15601T 雅典娜奶黄，规格 750x1500mm，奶黄色奶油绒质感砖，适合温暖、柔和、自然的客厅空间。",
+          needs: ["奶油风空间需要更暖的地面基底。", "全屋通铺要保持色调统一、纹理克制。", "适合搭配浅木、白纱、绿植与低饱和软装。"],
+          products: ["7KS15601T 雅典娜奶黄", "奶油绒质感砖", "臻白质感砖"],
+          productIds: ["cream-velvet", "gold-velvet", "large-slab"],
+          gallery: [
+            { image: "./assets/cases/generated/effect-cream-athena.jpg?v=gen2", label: "雅典娜奶黄客厅案例" },
+            { image: "./assets/products/cream-athena-milk-yellow.jpg?v=cream1", label: "雅典娜奶黄样板砖面" },
+            { image: "./assets/cases/generated/effect-cream-athena-detail.jpg?v=detail2", label: "雅典娜奶黄同场景地面细节" }
+          ]
+        },
+        "cream-bruce-living": {
+          title: "布鲁斯客厅案例",
+          image: "./assets/cases/generated/effect-cream-bruce.jpg?v=gen2",
+          summary: "7KS15605T 布鲁斯，规格 750x1500mm，米黄色奶油绒质感砖，适合暖调客厅、大平层与现代轻奢空间。",
+          needs: ["暖米黄地面适合提升空间亲和力。", "大面积铺贴需要低纹理、低反光。", "可搭配黑色背景墙和暖色软装形成层次。"],
+          products: ["7KS15605T 布鲁斯", "奶油绒质感砖", "状元锦绣丝绒"],
+          productIds: ["cream-velvet", "large-slab", "gold-velvet"],
+          gallery: [
+            { image: "./assets/cases/generated/effect-cream-bruce.jpg?v=gen2", label: "布鲁斯客厅案例" },
+            { image: "./assets/products/cream-bruce-beige.jpg?v=cream1", label: "布鲁斯样板砖面" },
+            { image: "./assets/cases/generated/effect-cream-bruce-detail.jpg?v=detail2", label: "布鲁斯同场景地面细节" }
+          ]
+        },
+        atelier: {
+          title: "展厅选材案例",
+          image: "./assets/brand/store-polished-3.jpg",
+          summary: "无锡新吴区金科瓷砖·岩板门店，集中展示热门瓷砖与岩板产品，方便家装和工程客户到店对比选样。",
+          needs: ["门店需要强品牌识别和清晰动线。", "产品陈列要突出热门首推系列。", "浅灰、白色和金科红形成统一记忆点。"],
+          products: ["奶油绒质感砖", "臻白质感砖", "状元彩晶"],
+          productIds: ["cream-velvet", "gold-velvet", "zhuangyuan-caijing"],
+          gallery: [
+            { image: "./assets/brand/store-polished-3.jpg", label: "样板走廊与色板区" },
+            { image: "./assets/brand/store-polished-4.jpg", label: "大板展示通道" },
+            { image: "./assets/brand/store-polished-1.jpg", label: "前台品牌区" }
+          ]
+        },
+        commercial: {
+          title: "商业空间案例",
+          image: "./assets/cases/generated/project-commercial.jpg?v=gen2",
+          summary: "商业空间强调耐用、易维护和第一眼质感，适合使用状元彩晶、状元锦绣丝绒与臻白质感砖组合。",
+          needs: ["高频人流区域需要耐磨防污。", "展示面需要更强材质表现。", "批量供货需要规格和批次稳定。"],
+          products: ["状元彩晶", "状元真石釉", "岩板大板", "臻白质感砖"],
+          productIds: ["zhuangyuan-caijing", "marble-look", "engineering", "gold-velvet"],
+          gallery: [
+            { image: "./assets/cases/generated/project-commercial.jpg?v=gen2", label: "商业空间效果图" },
+            { image: "./assets/cases/generated/project-commercial-focus-wall.jpg?v=detail2", label: "商业背景墙放大细节" },
+            { image: "./assets/cases/generated/project-commercial-focus-floor.jpg?v=detail2", label: "商业地面铺贴细节" }
+          ]
+        },
+        residential: {
+          title: "家装空间案例",
+          image: "./assets/cases/generated/project-residential.jpg?v=gen2",
+          summary: "以奶油柔光、浅色石纹和统一通铺打造明亮、干净、耐看的家装基底，适合改善型住宅、客餐厅与玄关一体化空间。",
+          needs: ["大面积铺贴需要明亮但不刺眼。", "客餐厅和玄关需要统一材质语言。", "推荐柔光表面提升居住舒适度。"],
+          products: ["奶油绒质感砖", "臻白质感砖", "状元锦绣丝绒", "木纹砖"],
+          productIds: ["cream-velvet", "gold-velvet", "large-slab", "wood-grain"],
+          gallery: [
+            { image: "./assets/cases/generated/project-residential.jpg?v=gen2", label: "家装空间效果图" },
+            { image: "./assets/cases/generated/project-residential-focus-living.jpg?v=detail2", label: "客餐厅局部搭配细节" },
+            { image: "./assets/cases/generated/project-residential-focus-floor.jpg?v=detail2", label: "浅色通铺地面细节" }
+          ]
+        },
+        hotel: {
+          title: "酒店工程案例",
+          image: "./assets/cases/generated/project-hotel.jpg?v=gen2",
+          summary: "酒店工程关注稳定交付、耐磨防滑和空间氛围，可按大堂、公区、卫浴区分别选型。",
+          needs: ["公区耐磨与维护效率优先。", "卫浴湿区关注防滑和防污。", "项目供货需统一批次和物流安排。"],
+          products: ["岩板大板", "状元锦绣丝绒", "卫浴防滑砖", "状元彩晶"],
+          productIds: ["engineering", "large-slab", "bathroom", "zhuangyuan-caijing"],
+          gallery: [
+            { image: "./assets/cases/generated/project-hotel.jpg?v=gen2", label: "酒店工程效果图" },
+            { image: "./assets/cases/generated/project-hotel-focus-wall.jpg?v=detail2", label: "酒店墙面灯光细节" },
+            { image: "./assets/cases/generated/project-hotel-focus-floor.jpg?v=detail2", label: "酒店公区地面细节" }
+          ]
+        }
+      };
+
+      const productCards = {
+        "cream-velvet": { title: "奶油绒质感砖", image: "./assets/products/cream-velvet.jpg?v=cream1", tag: "真实样板" },
+        "gold-velvet": { title: "臻白质感砖", image: "./assets/products/zhenbai-gubao-xiangya.jpg?v=focus1", tag: "卡诺尔臻白" },
+        "zhuangyuan-caijing": { title: "状元彩晶", image: "./assets/products/zhuangyuan-caijing.jpg", tag: "金科彩晶" },
+        "large-slab": { title: "状元锦绣丝绒", image: "./assets/products/gold-silk-silver.jpg?v=focus1", tag: "柔光丝绒" },
+        "living-room": { title: "客厅瓷砖", image: "./assets/products/living-room.jpg", tag: "全屋通铺" },
+        bathroom: { title: "卫浴防滑砖", image: "./assets/products/bathroom.jpg", tag: "湿区适配" },
+        "wood-grain": { title: "木纹砖", image: "./assets/products/wood-grain.jpg", tag: "自然木感" },
+        "marble-look": { title: "状元真石釉", image: "./assets/products/marble-cloud-gray.jpg?v=focus1", tag: "金科真石釉" },
+        engineering: { title: "岩板大板", image: "./assets/products/slab-stars-gray.jpg?v=series1", tag: "大规格岩板" }
+      };
+
+      const params = new URLSearchParams(location.search);
+      const id = cases[params.get("id")] ? params.get("id") : "villa";
+      const item = cases[id];
+      document.title = `${item.title} | 金科瓷砖·岩板`;
+      document.getElementById("title").textContent = item.title;
+      document.getElementById("summary").textContent = item.summary;
+      document.getElementById("cover").src = item.image;
+      document.getElementById("cover").alt = item.title;
+      document.getElementById("needs").innerHTML = item.needs.map((text) => `<li>${text}</li>`).join("");
+      document.getElementById("products").innerHTML = item.products.map((text) => `<span>${text}</span>`).join("");
+      document.getElementById("caseGallery").innerHTML = `
+        <div class="case-gallery__item case-gallery__item--large"><img src="${item.gallery[0].image}" alt="${item.gallery[0].label}" loading="lazy"><span>${item.gallery[0].label}</span></div>
+        <div class="case-gallery__stack">
+          ${item.gallery.slice(1).map((media) => `<div class="case-gallery__item"><img src="${media.image}" alt="${media.label}" loading="lazy"><span>${media.label}</span></div>`).join("")}
+        </div>
+      `;
+      document.getElementById("productPicks").innerHTML = item.productIds
+        .map((productId) => {
+          const product = productCards[productId];
+          return `<a class="product-pick" href="./product.html?id=${productId}"><img src="${product.image}" alt="${product.title}" loading="lazy"><div><span>${product.tag}</span><strong>${product.title}</strong></div></a>`;
+        })
+        .join("");
+      document.getElementById("moreCases").innerHTML = Object.entries(cases)
+        .filter(([key]) => ["villa", "residential", "commercial", "hotel"].includes(key) && key !== id)
+        .slice(0, 3)
+        .map(([key, value]) => `<a class="more-case" href="./case.html?id=${key}"><img src="${value.image}" alt="${value.title}" loading="lazy"><div><span>PROJECT</span><strong>${value.title}</strong></div></a>`)
+        .join("");
+    </script>
+  </body>
+</html>

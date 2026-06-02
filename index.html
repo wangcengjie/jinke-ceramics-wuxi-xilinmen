@@ -1,0 +1,2595 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="无锡市喜临门建材有限公司经营瓷砖行业35年，主营广东佛山金科瓷砖、卡诺尔瓷砖及多层次瓷砖岩板产品，服务家装、设计师与工程客户。" />
+    <meta name="keywords" content="金科瓷砖, 金科瓷砖岩板, 无锡瓷砖店, 新吴区瓷砖, 奶油绒质感砖, 臻白质感砖, 状元真石釉, 状元彩晶, 状元锦绣丝绒, 岩板, 木纹砖" />
+    <meta name="theme-color" content="#d83245" />
+    <meta property="og:title" content="金科瓷砖·岩板 | 智造品质家居" />
+    <meta property="og:description" content="江苏省无锡市新吴区新世界D18栋-7号金科瓷砖店，三十五年建材服务积淀，热门首推奶油绒质感砖、臻白质感砖与金科状元系列。" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="./assets/brand/store-polished-1.jpg" />
+    <title>金科瓷砖·岩板 | 无锡新吴区金科瓷砖店</title>
+    <link rel="preload" as="image" href="./assets/brand/store-polished-1.jpg" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      window.tailwind = window.tailwind || {};
+      window.tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              ink: "#151b2a",
+              stone: "#687182",
+              porcelain: "#f3f6fb",
+              champagne: "#d83245"
+            }
+          }
+        }
+      };
+    </script>
+    <style>
+      :root {
+        --ink: #151b2a;
+        --black: #000;
+        --charcoal: #222b3a;
+        --graphite: #344050;
+        --stone: #687182;
+        --soft: #f3f6fb;
+        --white: #fff;
+        --gold: #d83245;
+        --gold-soft: #ff7a86;
+        --line: rgba(255, 255, 255, 0.14);
+        --shadow: 0 28px 80px rgba(22, 32, 48, 0.16);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        font-family: Inter, "Noto Sans SC", "PingFang SC", "Microsoft YaHei", Arial, sans-serif;
+        color: var(--ink);
+        background: var(--soft);
+        letter-spacing: 0;
+        overflow-x: hidden;
+      }
+
+      img {
+        display: block;
+        max-width: 100%;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      button,
+      input,
+      textarea,
+      select {
+        font: inherit;
+      }
+
+      .loader {
+        position: fixed;
+        inset: 0;
+        z-index: 1000;
+        display: grid;
+        place-items: center;
+        background: #050505;
+        color: var(--white);
+        transition: opacity 700ms ease, visibility 700ms ease;
+      }
+
+      .loader.is-hidden {
+        opacity: 0;
+        visibility: hidden;
+      }
+
+      .loader__inner {
+        width: min(420px, calc(100vw - 48px));
+        text-align: center;
+      }
+
+      .loader__mark {
+        margin: 0 auto 22px;
+        display: block;
+        width: min(330px, 78vw);
+        padding: 14px 18px;
+        border-radius: 8px;
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        background: rgba(255, 255, 255, 0.96);
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.28);
+      }
+
+      .loader__mark img {
+        display: block;
+        width: 100%;
+        height: auto;
+      }
+
+      .loader__title {
+        margin: 0 0 18px;
+        font-size: 20px;
+        font-weight: 500;
+      }
+
+      .loader__bar {
+        position: relative;
+        height: 2px;
+        overflow: hidden;
+        background: rgba(255, 255, 255, 0.14);
+      }
+
+      .loader__bar::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        width: 42%;
+        background: linear-gradient(90deg, transparent, var(--gold), transparent);
+        animation: loadingLine 1.35s ease-in-out infinite;
+      }
+
+      @keyframes loadingLine {
+        from {
+          transform: translateX(-120%);
+        }
+        to {
+          transform: translateX(260%);
+        }
+      }
+
+      .cursor-light {
+        position: fixed;
+        left: 0;
+        top: 0;
+        z-index: 999;
+        width: 280px;
+        height: 280px;
+        pointer-events: none;
+        opacity: 0;
+        transform: translate3d(-50%, -50%, 0);
+        background: radial-gradient(circle, rgba(198, 162, 92, 0.22), rgba(198, 162, 92, 0.08) 38%, transparent 68%);
+        mix-blend-mode: screen;
+        transition: opacity 260ms ease;
+      }
+
+      i[data-lucide] {
+        display: inline-grid;
+        width: 20px;
+        height: 20px;
+        flex: 0 0 auto;
+        place-items: center;
+        font-style: normal;
+        line-height: 1;
+      }
+
+      i[data-lucide]::before {
+        color: currentColor;
+        font-size: 18px;
+      }
+
+      i[data-lucide="menu"]::before {
+        content: "☰";
+      }
+
+      i[data-lucide="x"]::before {
+        content: "×";
+      }
+
+      i[data-lucide="arrow-right"]::before,
+      i[data-lucide="send"]::before {
+        content: "→";
+      }
+
+      i[data-lucide="arrow-left"]::before {
+        content: "←";
+      }
+
+      i[data-lucide="calendar-check"]::before,
+      i[data-lucide="badge-check"]::before,
+      i[data-lucide="shield"]::before {
+        content: "✓";
+      }
+
+      i[data-lucide="message-square"]::before,
+      i[data-lucide="mail"]::before {
+        content: "□";
+      }
+
+      i[data-lucide="leaf"]::before {
+        content: "◇";
+      }
+
+      i[data-lucide="droplets"]::before {
+        content: "◌";
+      }
+
+      i[data-lucide="ruler"]::before {
+        content: "↔";
+      }
+
+      i[data-lucide="truck"]::before {
+        content: "▭";
+      }
+
+      i[data-lucide="phone"]::before {
+        content: "☎";
+      }
+
+      i[data-lucide="map-pin"]::before {
+        content: "⌖";
+      }
+
+      .site-header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 80;
+        color: var(--white);
+        transition: background 260ms ease, border-color 260ms ease, transform 260ms ease;
+      }
+
+      .site-header.is-scrolled {
+        background: rgba(255, 255, 255, 0.9);
+        border-bottom: 1px solid rgba(21, 27, 42, 0.1);
+        backdrop-filter: blur(18px);
+      }
+
+      .nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: min(1200px, calc(100% - 48px));
+        height: 82px;
+        margin: 0 auto;
+      }
+
+      .brand {
+        display: inline-flex;
+        align-items: center;
+        gap: 13px;
+        min-width: 0;
+        border: 1px solid rgba(255, 255, 255, 0.58);
+        border-radius: 8px;
+        padding: 8px 12px;
+        background: rgba(255, 255, 255, 0.88);
+        backdrop-filter: blur(12px);
+      }
+
+      .brand__mark {
+        width: 188px;
+        height: auto;
+        filter: drop-shadow(0 8px 18px rgba(0, 0, 0, 0.16));
+      }
+
+      .brand__text {
+        display: grid;
+        gap: 2px;
+      }
+
+      .brand__name {
+        display: none;
+      }
+
+      .brand__sub {
+        display: none;
+      }
+
+      .nav__links {
+        display: flex;
+        align-items: center;
+        gap: 30px;
+        color: rgba(255, 255, 255, 0.82);
+        font-size: 14px;
+      }
+
+      .nav__links a {
+        position: relative;
+        padding: 8px 0;
+        transition: color 200ms ease;
+      }
+
+      .nav__links a::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 1px;
+        background: var(--gold);
+        transform: scaleX(0);
+        transform-origin: right;
+        transition: transform 240ms ease;
+      }
+
+      .nav__links a:hover {
+        color: var(--white);
+      }
+
+      .site-header.is-scrolled .nav__links {
+        color: rgba(21, 27, 42, 0.76);
+      }
+
+      .site-header.is-scrolled .nav__links a:hover {
+        color: var(--ink);
+      }
+
+      .nav__links a:hover::after {
+        transform: scaleX(1);
+        transform-origin: left;
+      }
+
+      .nav__action {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        border: 1px solid rgba(216, 50, 69, 0.72);
+        padding: 12px 18px;
+        color: var(--gold-soft);
+        font-size: 14px;
+        transition: background 220ms ease, color 220ms ease, transform 220ms ease;
+      }
+
+      .nav__action:hover {
+        background: var(--gold);
+        color: #fff;
+        transform: translateY(-2px);
+      }
+
+      .site-header.is-scrolled .nav__action {
+        color: var(--gold);
+      }
+
+      .site-header.is-scrolled .nav__action:hover {
+        color: #fff;
+      }
+
+      .menu-toggle {
+        display: none;
+        width: 44px;
+        height: 44px;
+        place-items: center;
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        background: rgba(255, 255, 255, 0.05);
+        color: var(--white);
+      }
+
+      .site-header.is-scrolled .menu-toggle {
+        color: var(--ink);
+        border-color: rgba(21, 27, 42, 0.16);
+      }
+
+      .hero {
+        position: relative;
+        min-height: 94svh;
+        overflow: hidden;
+        color: var(--white);
+        background: #111827;
+      }
+
+      .hero__bg {
+        position: absolute;
+        inset: -6%;
+        background-image: linear-gradient(90deg, rgba(9, 15, 26, 0.78), rgba(9, 15, 26, 0.46), rgba(216, 50, 69, 0.06)), url("./assets/brand/jinke-showroom-angle.jpg");
+        background-position: center 42%;
+        background-size: cover;
+        transform: scale(1.04);
+        will-change: transform;
+      }
+
+      .hero__texture {
+        position: absolute;
+        inset: 0;
+        background:
+          linear-gradient(0deg, rgba(10, 16, 27, 0.58), transparent 46%, rgba(255, 255, 255, 0.08)),
+          repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.05) 0 1px, transparent 1px 120px);
+        pointer-events: none;
+      }
+
+      .hero__inner {
+        position: relative;
+        z-index: 2;
+        display: grid;
+        align-content: center;
+        width: min(1200px, calc(100% - 48px));
+        min-height: 94svh;
+        margin: 0 auto;
+        padding: 112px 0 78px;
+      }
+
+      .eyebrow {
+        display: inline-flex;
+        width: fit-content;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 28px;
+        color: var(--gold-soft);
+        font-size: 14px;
+      }
+
+      .eyebrow::before {
+        content: "";
+        width: 44px;
+        height: 1px;
+        background: var(--gold);
+      }
+
+      .hero h1 {
+        max-width: 800px;
+        margin: 0;
+        font-size: 76px;
+        font-weight: 600;
+        line-height: 1.02;
+      }
+
+      .hero__slogan {
+        margin: 28px 0 0;
+        color: rgba(255, 255, 255, 0.93);
+        font-size: 30px;
+        line-height: 1.35;
+        font-weight: 400;
+      }
+
+      .hero__copy {
+        max-width: 620px;
+        margin: 20px 0 0;
+        color: rgba(255, 255, 255, 0.72);
+        font-size: 18px;
+        line-height: 1.9;
+      }
+
+      .hero__actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 14px;
+        margin-top: 42px;
+      }
+
+      .btn {
+        position: relative;
+        display: inline-flex;
+        min-height: 52px;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        border: 1px solid transparent;
+        border-radius: 6px;
+        padding: 0 24px;
+        overflow: hidden;
+        cursor: pointer;
+        transition: transform 220ms ease, border-color 220ms ease, background 220ms ease, color 220ms ease;
+      }
+
+      .btn:hover {
+        transform: translateY(-3px);
+      }
+
+      .btn--gold {
+        background: var(--gold);
+        color: #080808;
+      }
+
+      .btn--ghost {
+        border-color: rgba(255, 255, 255, 0.34);
+        color: var(--white);
+        background: rgba(255, 255, 255, 0.04);
+        backdrop-filter: blur(14px);
+      }
+
+      .hero__proof {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 1px;
+        width: min(620px, 100%);
+        margin-top: 72px;
+        border: 1px solid rgba(255, 255, 255, 0.11);
+        background: rgba(255, 255, 255, 0.08);
+        backdrop-filter: blur(18px);
+      }
+
+      .proof-item {
+        min-height: 96px;
+        padding: 22px;
+        background: rgba(7, 7, 7, 0.46);
+      }
+
+      .proof-item strong {
+        display: block;
+        color: var(--gold-soft);
+        font-size: 28px;
+        font-weight: 500;
+      }
+
+      .proof-item span {
+        display: block;
+        margin-top: 8px;
+        color: rgba(255, 255, 255, 0.6);
+        font-size: 13px;
+      }
+
+      .scroll-cue {
+        position: absolute;
+        right: 48px;
+        bottom: 32px;
+        z-index: 3;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        color: rgba(255, 255, 255, 0.58);
+        font-size: 12px;
+      }
+
+      .scroll-cue::after {
+        content: "";
+        display: block;
+        width: 52px;
+        height: 1px;
+        background: rgba(255, 255, 255, 0.35);
+        animation: cueLine 1.6s ease-in-out infinite;
+      }
+
+      @keyframes cueLine {
+        50% {
+          transform: translateX(10px);
+          opacity: 0.5;
+        }
+      }
+
+      section {
+        position: relative;
+      }
+
+      .section {
+        padding: 112px 0;
+      }
+
+      .section--dark {
+        color: var(--white);
+        background: #111827;
+      }
+
+      .section--light {
+        background: var(--soft);
+      }
+
+      .section-inner {
+        width: min(1200px, calc(100% - 48px));
+        margin: 0 auto;
+      }
+
+      .section-head {
+        display: grid;
+        grid-template-columns: 0.85fr 1fr;
+        gap: 48px;
+        align-items: end;
+        margin-bottom: 58px;
+      }
+
+      .section-kicker {
+        margin: 0 0 16px;
+        color: var(--gold);
+        font-size: 14px;
+      }
+
+      .section-title {
+        margin: 0;
+        font-size: 46px;
+        line-height: 1.16;
+        font-weight: 520;
+      }
+
+      .section-copy {
+        margin: 0;
+        color: var(--stone);
+        font-size: 17px;
+        line-height: 1.9;
+      }
+
+      .section--dark .section-copy {
+        color: rgba(255, 255, 255, 0.64);
+      }
+
+      .brand-grid {
+        display: grid;
+        grid-template-columns: 0.92fr 1.08fr;
+        gap: 54px;
+        align-items: center;
+      }
+
+      .brand-story {
+        display: grid;
+        gap: 28px;
+      }
+
+      .story-line {
+        display: grid;
+        grid-template-columns: 72px 1fr;
+        gap: 24px;
+        padding-bottom: 28px;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+      }
+
+      .story-line:last-child {
+        border-bottom: 0;
+      }
+
+      .story-line__num {
+        color: var(--gold);
+        font-size: 15px;
+      }
+
+      .story-line h3 {
+        margin: 0 0 10px;
+        font-size: 23px;
+        font-weight: 520;
+      }
+
+      .story-line p {
+        margin: 0;
+        color: var(--stone);
+        line-height: 1.85;
+      }
+
+      .story-list {
+        display: grid;
+        gap: 10px;
+        margin: 16px 0 0;
+        padding: 0;
+        list-style: none;
+        color: var(--stone);
+        line-height: 1.75;
+      }
+
+      .story-list li {
+        position: relative;
+        padding-left: 18px;
+      }
+
+      .story-list li::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 12px;
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: var(--gold);
+      }
+
+      .brand-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 24px;
+      }
+
+      .brand-tags span {
+        border: 1px solid rgba(216, 50, 69, 0.22);
+        border-radius: 999px;
+        padding: 10px 13px;
+        color: var(--charcoal);
+        background: rgba(255, 255, 255, 0.72);
+        font-size: 13px;
+        font-weight: 600;
+      }
+
+      .brand-metrics {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 1px;
+        margin-top: 26px;
+        overflow: hidden;
+        border: 1px solid rgba(21, 27, 42, 0.1);
+        border-radius: 8px;
+        background: rgba(21, 27, 42, 0.08);
+      }
+
+      .brand-metric {
+        padding: 22px 18px;
+        background: rgba(255, 255, 255, 0.78);
+      }
+
+      .brand-metric strong {
+        display: block;
+        color: var(--gold);
+        font-size: 30px;
+        line-height: 1;
+        font-weight: 720;
+      }
+
+      .brand-metric span {
+        display: block;
+        margin-top: 9px;
+        color: var(--stone);
+        font-size: 13px;
+        line-height: 1.5;
+      }
+
+      .image-panel {
+        position: relative;
+        min-height: 520px;
+        overflow: hidden;
+        border-radius: 8px;
+        background: #111;
+        box-shadow: var(--shadow);
+      }
+
+      .image-panel img {
+        width: 100%;
+        height: 100%;
+        min-height: 520px;
+        object-fit: cover;
+        transform: scale(1.03);
+      }
+
+      .cert-strip {
+        position: absolute;
+        left: 22px;
+        right: 22px;
+        bottom: 22px;
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 1px;
+        border: 1px solid rgba(255, 255, 255, 0.16);
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(16px);
+      }
+
+      .cert-strip span {
+        padding: 16px 12px;
+        color: rgba(255, 255, 255, 0.82);
+        background: rgba(8, 8, 8, 0.48);
+        text-align: center;
+        font-size: 13px;
+      }
+
+      .showroom-grid {
+        display: grid;
+        grid-template-columns: 1.15fr 0.85fr;
+        gap: 24px;
+        align-items: stretch;
+      }
+
+      .showroom-stack {
+        display: grid;
+        gap: 24px;
+      }
+
+      .showroom-card {
+        position: relative;
+        display: block;
+        min-height: 300px;
+        overflow: hidden;
+        border-radius: 8px;
+        background: #111;
+        box-shadow: 0 18px 50px rgba(22, 32, 48, 0.14);
+      }
+
+      .showroom-card--large {
+        min-height: 640px;
+      }
+
+      .showroom-card img {
+        width: 100%;
+        height: 100%;
+        min-height: inherit;
+        object-fit: cover;
+        transition: transform 900ms ease, filter 900ms ease;
+      }
+
+      .showroom-card:hover img {
+        transform: scale(1.045);
+        filter: saturate(1.05);
+      }
+
+      .showroom-card__body {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 2;
+        padding: 26px;
+        color: #fff;
+        background: linear-gradient(180deg, rgba(7, 12, 20, 0), rgba(7, 12, 20, 0.82));
+      }
+
+      .showroom-card__body span {
+        display: block;
+        margin-bottom: 8px;
+        color: var(--gold-soft);
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 0;
+      }
+
+      .showroom-card__body h3 {
+        margin: 0;
+        font-size: 24px;
+        font-weight: 560;
+      }
+
+      .showroom-card__body p {
+        max-width: 520px;
+        margin: 10px 0 0;
+        color: rgba(255, 255, 255, 0.72);
+        line-height: 1.75;
+      }
+
+      .product-grid {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 18px;
+      }
+
+      .product-card {
+        position: relative;
+        display: block;
+        min-height: 390px;
+        overflow: hidden;
+        border-radius: 8px;
+        background: #111;
+        box-shadow: 0 18px 50px rgba(0, 0, 0, 0.11);
+        transform-style: preserve-3d;
+        transition: box-shadow 260ms ease, transform 260ms ease;
+        will-change: transform;
+      }
+
+      .product-card--hot {
+        border: 1px solid rgba(198, 162, 92, 0.52);
+      }
+
+      .product-card--hot::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        border: 1px solid rgba(255, 240, 190, 0.12);
+        pointer-events: none;
+      }
+
+      .hot-ribbon {
+        position: absolute;
+        left: 22px;
+        top: 22px;
+        z-index: 4;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        border: 1px solid rgba(198, 162, 92, 0.56);
+        border-radius: 6px;
+        padding: 8px 12px;
+        color: #120f09;
+        background: rgba(230, 213, 164, 0.92);
+        font-size: 12px;
+        font-weight: 600;
+        box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18);
+      }
+
+      .product-card:hover {
+        box-shadow: 0 28px 70px rgba(0, 0, 0, 0.23);
+      }
+
+      .product-card__media {
+        position: absolute;
+        inset: 0;
+        overflow: hidden;
+      }
+
+      .product-card__media img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 700ms ease, filter 700ms ease;
+      }
+
+      .product-card:hover img {
+        transform: scale(1.09);
+        filter: contrast(1.06);
+      }
+
+      .product-card__shade {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(180deg, rgba(0, 0, 0, 0.04), rgba(0, 0, 0, 0.72));
+      }
+
+      .product-card__body {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        padding: 22px;
+        color: var(--white);
+        transform: translateZ(42px);
+      }
+
+      .product-card__body h3 {
+        margin: 0 0 10px;
+        font-size: 23px;
+        font-weight: 520;
+      }
+
+      .product-card__body p {
+        min-height: 68px;
+        margin: 0 0 20px;
+        color: rgba(255, 255, 255, 0.68);
+        font-size: 14px;
+        line-height: 1.65;
+      }
+
+      .product-meta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+
+      .product-meta span {
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        border-radius: 6px;
+        padding: 7px 10px;
+        color: rgba(255, 255, 255, 0.78);
+        background: rgba(255, 255, 255, 0.07);
+        font-size: 12px;
+      }
+
+      .cases {
+        background:
+          linear-gradient(180deg, #f3f6fb 0%, #eef2f7 42%, #111827 42%, #111827 100%);
+      }
+
+      .cases .section-title {
+        color: var(--ink);
+      }
+
+      .cases .section-kicker {
+        color: var(--red);
+      }
+
+      .cases .section-copy {
+        color: var(--stone);
+      }
+
+      .case-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 24px;
+      }
+
+      .case-card {
+        display: block;
+        overflow: hidden;
+        border-radius: 8px;
+        background: #fff;
+        box-shadow: 0 24px 70px rgba(0, 0, 0, 0.2);
+      }
+
+      .case-card__media {
+        position: relative;
+        overflow: hidden;
+      }
+
+      .case-card__image {
+        width: 100%;
+        aspect-ratio: 16 / 10;
+        object-fit: cover;
+        transition: transform 760ms ease;
+      }
+
+      .case-card:hover .case-card__image {
+        transform: scale(1.06);
+      }
+
+      .case-card__media::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(180deg, transparent 35%, rgba(0, 0, 0, 0.62));
+      }
+
+      .case-card__body {
+        padding: 22px;
+        color: var(--ink);
+      }
+
+      .case-card__body span {
+        color: var(--red);
+        font-size: 13px;
+        font-weight: 800;
+      }
+
+      .case-card__body h3 {
+        margin: 8px 0 0;
+        font-size: 24px;
+        font-weight: 560;
+      }
+
+      .case-card__body p {
+        margin: 10px 0 0;
+        color: var(--stone);
+        line-height: 1.7;
+      }
+
+      .case-detail-row {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+        margin-top: 18px;
+      }
+
+      .case-detail-row figure {
+        margin: 0;
+        overflow: hidden;
+        border-radius: 6px;
+        background: #f3f6fb;
+      }
+
+      .case-detail-row img {
+        width: 100%;
+        aspect-ratio: 1.35;
+        object-fit: cover;
+      }
+
+      .case-detail-row figcaption {
+        padding: 8px 10px;
+        color: #4f5868;
+        font-size: 12px;
+        font-weight: 700;
+      }
+
+      .gradient-band {
+        overflow: hidden;
+        color: var(--white);
+        background: #111827;
+      }
+
+      .gradient-band::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(125deg, #111827 0%, #263447 30%, #d83245 52%, #ffffff 68%, #111827 100%);
+        background-size: 260% 260%;
+        opacity: 0.18;
+        animation: luxuryFlow 14s ease-in-out infinite alternate;
+      }
+
+      @keyframes luxuryFlow {
+        from {
+          background-position: 0% 50%;
+        }
+        to {
+          background-position: 100% 50%;
+        }
+      }
+
+      .advantages-grid {
+        position: relative;
+        z-index: 2;
+        display: grid;
+        grid-template-columns: repeat(6, minmax(0, 1fr));
+        gap: 14px;
+      }
+
+      .advantage {
+        min-height: 190px;
+        border: 1px solid rgba(255, 255, 255, 0.13);
+        border-radius: 8px;
+        padding: 24px 18px;
+        background: rgba(255, 255, 255, 0.07);
+        backdrop-filter: blur(16px);
+        transition: transform 260ms ease, background 260ms ease, border-color 260ms ease;
+      }
+
+      .advantage:hover {
+        transform: translateY(-8px);
+        border-color: rgba(198, 162, 92, 0.58);
+        background: rgba(255, 255, 255, 0.1);
+      }
+
+      .advantage i {
+        display: inline-grid;
+        width: 44px;
+        height: 44px;
+        margin-bottom: 28px;
+        place-items: center;
+        color: var(--gold-soft);
+      }
+
+      .advantage h3 {
+        margin: 0 0 12px;
+        font-size: 18px;
+        font-weight: 520;
+      }
+
+      .advantage p {
+        margin: 0;
+        color: rgba(255, 255, 255, 0.62);
+        font-size: 14px;
+        line-height: 1.75;
+      }
+
+      .testimonial-wrap {
+        display: grid;
+        grid-template-columns: 0.82fr 1.18fr;
+        gap: 64px;
+        align-items: center;
+      }
+
+      .quote-panel {
+        position: relative;
+        min-height: 420px;
+        border: 1px solid rgba(0, 0, 0, 0.08);
+        border-radius: 8px;
+        overflow: hidden;
+        background: var(--white);
+        box-shadow: var(--shadow);
+      }
+
+      .quote-slide {
+        position: absolute;
+        inset: 0;
+        display: grid;
+        align-content: center;
+        padding: 54px;
+        opacity: 0;
+        transform: translateX(20px);
+        transition: opacity 420ms ease, transform 420ms ease;
+        pointer-events: none;
+      }
+
+      .quote-slide.is-active {
+        opacity: 1;
+        transform: translateX(0);
+        pointer-events: auto;
+      }
+
+      .quote-slide blockquote {
+        margin: 0;
+        font-size: 28px;
+        line-height: 1.7;
+        font-weight: 420;
+      }
+
+      .quote-slide footer {
+        margin-top: 34px;
+        color: var(--stone);
+        line-height: 1.7;
+      }
+
+      .quote-slide strong {
+        display: block;
+        color: var(--ink);
+        font-weight: 560;
+      }
+
+      .quote-controls {
+        position: absolute;
+        right: 28px;
+        bottom: 28px;
+        z-index: 3;
+        display: flex;
+        gap: 10px;
+      }
+
+      .icon-btn {
+        display: inline-grid;
+        width: 42px;
+        height: 42px;
+        place-items: center;
+        border: 1px solid rgba(0, 0, 0, 0.12);
+        border-radius: 6px;
+        background: rgba(255, 255, 255, 0.78);
+        color: var(--ink);
+        cursor: pointer;
+        transition: background 180ms ease, color 180ms ease, transform 180ms ease;
+      }
+
+      .icon-btn:hover {
+        background: var(--ink);
+        color: var(--white);
+        transform: translateY(-2px);
+      }
+
+      .quote-side {
+        display: grid;
+        gap: 18px;
+      }
+
+      .metric-list {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 16px;
+      }
+
+      .metric {
+        border-top: 1px solid rgba(0, 0, 0, 0.12);
+        padding-top: 20px;
+      }
+
+      .metric strong {
+        display: block;
+        color: var(--gold);
+        font-size: 34px;
+        font-weight: 520;
+      }
+
+      .metric span {
+        color: var(--stone);
+      }
+
+      .contact {
+        color: var(--white);
+        background: #111827;
+      }
+
+      .contact-grid {
+        display: grid;
+        grid-template-columns: 1.02fr 0.98fr;
+        gap: 28px;
+        align-items: stretch;
+      }
+
+      .contact-card,
+      .form-card {
+        border: 1px solid rgba(255, 255, 255, 0.13);
+        border-radius: 8px;
+        background: rgba(255, 255, 255, 0.06);
+        backdrop-filter: blur(18px);
+      }
+
+      .form-card {
+        padding: 34px;
+      }
+
+      .form-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 16px;
+      }
+
+      .field {
+        display: grid;
+        gap: 8px;
+      }
+
+      .field--full {
+        grid-column: 1 / -1;
+      }
+
+      .field label {
+        color: rgba(255, 255, 255, 0.72);
+        font-size: 13px;
+      }
+
+      .field input,
+      .field textarea,
+      .field select {
+        width: 100%;
+        border: 1px solid rgba(255, 255, 255, 0.14);
+        border-radius: 6px;
+        padding: 14px 14px;
+        color: var(--white);
+        background: rgba(0, 0, 0, 0.28);
+        outline: none;
+        transition: border-color 180ms ease, background 180ms ease;
+      }
+
+      .field textarea {
+        min-height: 126px;
+        resize: vertical;
+      }
+
+      .field input:focus,
+      .field textarea:focus,
+      .field select:focus {
+        border-color: rgba(198, 162, 92, 0.78);
+        background: rgba(0, 0, 0, 0.44);
+      }
+
+      .field select option {
+        color: #111;
+      }
+
+      .contact-card {
+        display: grid;
+        grid-template-rows: auto 1fr;
+        overflow: hidden;
+      }
+
+      .contact-info {
+        display: grid;
+        grid-template-columns: 1fr 180px;
+        gap: 24px;
+        padding: 34px;
+      }
+
+      .contact-list {
+        display: grid;
+        gap: 20px;
+      }
+
+      .contact-line {
+        display: grid;
+        grid-template-columns: 38px 1fr;
+        gap: 14px;
+        align-items: start;
+      }
+
+      .contact-line i {
+        display: grid;
+        width: 38px;
+        height: 38px;
+        place-items: center;
+        color: var(--gold-soft);
+      }
+
+      .contact-line span {
+        display: block;
+        color: rgba(255, 255, 255, 0.55);
+        font-size: 13px;
+      }
+
+      .contact-line strong {
+        display: block;
+        margin-top: 4px;
+        color: rgba(255, 255, 255, 0.92);
+        font-size: 18px;
+        font-weight: 520;
+      }
+
+      .qr-box {
+        display: grid;
+        align-content: center;
+        justify-items: center;
+        gap: 14px;
+      }
+
+      #wechatQr {
+        display: grid;
+        place-items: center;
+        width: 196px;
+        height: 196px;
+        padding: 16px;
+        overflow: hidden;
+        border-radius: 8px;
+        background: #f8f6ef;
+      }
+
+      #wechatQr img,
+      #wechatQr canvas {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+
+      .qr-box p {
+        margin: 0;
+        color: rgba(255, 255, 255, 0.58);
+        text-align: center;
+        font-size: 13px;
+        line-height: 1.6;
+      }
+
+      .map-panel {
+        position: relative;
+        min-height: 276px;
+        overflow: hidden;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        background:
+          linear-gradient(125deg, rgba(255, 255, 255, 0.08), transparent 45%),
+          repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.06) 0 1px, transparent 1px 46px),
+          repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.05) 0 1px, transparent 1px 52px),
+          #101010;
+      }
+
+      .map-route {
+        position: absolute;
+        left: 12%;
+        top: 48%;
+        width: 76%;
+        height: 2px;
+        background: linear-gradient(90deg, transparent, var(--gold), transparent);
+        transform: rotate(-11deg);
+      }
+
+      .map-pin {
+        position: absolute;
+        left: 58%;
+        top: 36%;
+        display: grid;
+        width: 46px;
+        height: 46px;
+        place-items: center;
+        border: 1px solid rgba(198, 162, 92, 0.72);
+        border-radius: 50%;
+        background: rgba(0, 0, 0, 0.68);
+        color: var(--gold-soft);
+        box-shadow: 0 0 0 10px rgba(198, 162, 92, 0.08);
+      }
+
+      .map-caption {
+        position: absolute;
+        left: 34px;
+        bottom: 28px;
+        color: rgba(255, 255, 255, 0.78);
+      }
+
+      .map-caption strong {
+        display: block;
+        color: var(--white);
+        font-size: 19px;
+        font-weight: 520;
+      }
+
+      .form-note {
+        min-height: 24px;
+        margin: 16px 0 0;
+        color: var(--gold-soft);
+        font-size: 14px;
+      }
+
+      .footer {
+        border-top: 1px solid rgba(255, 255, 255, 0.11);
+        padding: 30px 0;
+        color: rgba(255, 255, 255, 0.48);
+        background: #0d1422;
+      }
+
+      .footer__inner {
+        display: flex;
+        justify-content: space-between;
+        gap: 22px;
+        width: min(1200px, calc(100% - 48px));
+        margin: 0 auto;
+        font-size: 13px;
+      }
+
+      .reveal {
+        opacity: 0;
+        transform: translateY(46px);
+        transition: opacity 900ms ease, transform 900ms ease;
+      }
+
+      .reveal.is-visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      @media (max-width: 1100px) {
+        .section-head,
+        .brand-grid,
+        .showroom-grid,
+        .testimonial-wrap,
+        .contact-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .product-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .advantages-grid {
+          grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
+
+        .case-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      @media (max-width: 860px) {
+        .nav {
+          width: min(100% - 32px, 1200px);
+          height: 68px;
+        }
+
+        .brand {
+          padding: 7px 10px;
+        }
+
+        .brand__mark {
+          width: 178px;
+        }
+
+        .menu-toggle {
+          display: grid;
+          background: rgba(255, 255, 255, 0.88);
+          color: var(--red);
+          border-color: rgba(255, 255, 255, 0.72);
+          box-shadow: 0 12px 28px rgba(9, 15, 26, 0.14);
+        }
+
+        .nav__links {
+          position: fixed;
+          left: 16px;
+          right: 16px;
+          top: 76px;
+          display: grid;
+          gap: 0;
+          padding: 14px;
+          border: 1px solid rgba(21, 27, 42, 0.12);
+          border-radius: 8px;
+          color: var(--ink);
+          background: rgba(255, 255, 255, 0.96);
+          backdrop-filter: blur(18px);
+          box-shadow: 0 24px 60px rgba(9, 15, 26, 0.18);
+          opacity: 0;
+          transform: translateY(-12px);
+          pointer-events: none;
+          transition: opacity 220ms ease, transform 220ms ease;
+        }
+
+        .nav__links.is-open {
+          opacity: 1;
+          transform: translateY(0);
+          pointer-events: auto;
+        }
+
+        .nav__links a,
+        .nav__links .nav__action {
+          width: 100%;
+          justify-content: flex-start;
+          padding: 14px;
+        }
+
+        .nav__links .nav__action {
+          color: var(--red);
+          background: rgba(216, 50, 69, 0.06);
+        }
+
+        .brand__sub {
+          display: none;
+        }
+
+        .hero h1 {
+          font-size: 52px;
+        }
+
+        .hero__slogan {
+          font-size: 24px;
+        }
+
+        .hero__copy {
+          font-size: 16px;
+        }
+
+        .section {
+          padding: 82px 0;
+        }
+
+        .section-title {
+          font-size: 36px;
+        }
+
+        .contact-info {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      @media (max-width: 640px) {
+        .cursor-light {
+          display: none;
+        }
+
+        .loader__mark {
+          width: min(286px, 78vw);
+          padding: 12px 14px;
+        }
+
+        .nav {
+          width: min(100% - 24px, 1200px);
+          height: 64px;
+        }
+
+        .brand {
+          max-width: calc(100vw - 86px);
+          padding: 6px 8px;
+        }
+
+        .brand__mark {
+          width: 158px;
+          filter: drop-shadow(0 6px 14px rgba(0, 0, 0, 0.12));
+        }
+
+        .menu-toggle {
+          width: 40px;
+          height: 40px;
+        }
+
+        .hero,
+        .hero__inner {
+          min-height: 92svh;
+        }
+
+        .hero__inner {
+          padding: 96px 0 46px;
+        }
+
+        .hero__inner,
+        .section-inner,
+        .footer__inner {
+          width: min(100% - 32px, 1200px);
+        }
+
+        .hero h1 {
+          font-size: clamp(36px, 10vw, 44px);
+          line-height: 1.06;
+        }
+
+        .hero__slogan {
+          margin-top: 18px;
+          font-size: 18px;
+        }
+
+        .hero__copy {
+          margin-top: 16px;
+          font-size: 14px;
+          line-height: 1.75;
+        }
+
+        .eyebrow {
+          gap: 8px;
+          margin-bottom: 18px;
+          font-size: 12px;
+        }
+
+        .eyebrow::before {
+          width: 34px;
+        }
+
+        .hero__actions {
+          gap: 10px;
+          margin-top: 28px;
+        }
+
+        .btn {
+          flex: 1 1 0;
+          min-height: 48px;
+          padding: 0 14px;
+          font-size: 14px;
+        }
+
+        .hero__proof {
+          grid-template-columns: repeat(3, minmax(0, 1fr));
+          width: 100%;
+          margin-top: 32px;
+        }
+
+        .proof-item {
+          min-height: 82px;
+          padding: 12px 9px;
+        }
+
+        .proof-item strong {
+          font-size: 24px;
+        }
+
+        .proof-item span {
+          margin-top: 6px;
+          font-size: 11px;
+          line-height: 1.35;
+        }
+
+        .scroll-cue {
+          display: none;
+        }
+
+        .section-head {
+          gap: 24px;
+          margin-bottom: 36px;
+        }
+
+        .section-title {
+          font-size: 30px;
+        }
+
+        .story-line {
+          grid-template-columns: 1fr;
+          gap: 10px;
+        }
+
+        .image-panel,
+        .image-panel img {
+          min-height: 340px;
+        }
+
+        .brand-metrics {
+          grid-template-columns: 1fr;
+        }
+
+        .showroom-card,
+        .showroom-card--large {
+          min-height: 330px;
+        }
+
+        .showroom-card__body {
+          padding: 20px;
+        }
+
+        .showroom-card__body h3,
+        .case-card__body h3 {
+          font-size: 21px;
+        }
+
+        .cert-strip {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .product-grid,
+        .advantages-grid,
+        .metric-list,
+        .form-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .product-card {
+          min-height: 360px;
+        }
+
+        .product-card__body {
+          padding: 18px;
+        }
+
+        .product-card__body p {
+          min-height: auto;
+          margin-bottom: 16px;
+        }
+        }
+
+        .case-detail-row {
+          grid-template-columns: 1fr;
+        }
+
+        .quote-panel {
+          min-height: 500px;
+        }
+
+        .quote-slide {
+          padding: 32px;
+        }
+
+        .quote-slide blockquote {
+          font-size: 22px;
+        }
+
+        .form-card,
+        .contact-info {
+          padding: 24px;
+        }
+
+        .footer__inner {
+          display: grid;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+          animation-duration: 1ms !important;
+          scroll-behavior: auto !important;
+          transition-duration: 1ms !important;
+        }
+      }
+    </style>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "HomeAndConstructionBusiness",
+        "name": "金科瓷砖·岩板",
+        "description": "无锡市喜临门建材有限公司经营瓷砖行业35年，主营广东佛山金科瓷砖、卡诺尔瓷砖及多层次瓷砖岩板产品，提供家装、设计师与工程项目选材服务。",
+        "telephone": "13861735222",
+        "areaServed": "中国",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "新世界D18栋-7号金科瓷砖店",
+          "addressLocality": "无锡",
+          "addressRegion": "江苏",
+          "addressCountry": "CN"
+        },
+        "makesOffer": [
+          { "@type": "Offer", "itemOffered": { "@type": "Product", "name": "奶油绒质感砖" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Product", "name": "臻白质感砖" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Product", "name": "状元真石釉" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Product", "name": "状元彩晶" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Product", "name": "状元锦绣丝绒" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Product", "name": "岩板大板" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Product", "name": "木纹砖" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Product", "name": "卫浴防滑砖" } }
+        ]
+      }
+    </script>
+  </head>
+  <body>
+    <div class="loader" id="loader" aria-hidden="true">
+      <div class="loader__inner">
+        <div class="loader__mark">
+          <img src="./assets/brand/jinke-logo.png?v=15" alt="金科瓷砖·岩板 JINKe CERAMICS" width="1440" height="300" />
+        </div>
+        <p class="loader__title">金科瓷砖·岩板 · 展厅方案加载中</p>
+        <div class="loader__bar"></div>
+      </div>
+    </div>
+
+    <div class="cursor-light" id="cursorLight"></div>
+
+    <header class="site-header" id="siteHeader">
+      <nav class="nav" aria-label="主导航">
+        <a class="brand" href="#top" aria-label="金科瓷砖岩板首页">
+          <img class="brand__mark" src="./assets/brand/jinke-logo.png?v=15" alt="金科瓷砖·岩板 JINKe CERAMICS" width="1440" height="300" />
+          <span class="brand__text">
+            <span class="brand__name">金科瓷砖·岩板</span>
+            <span class="brand__sub">JINKe CERAMICS</span>
+          </span>
+        </a>
+        <button class="menu-toggle" id="menuToggle" type="button" aria-label="打开导航菜单">
+          <i data-lucide="menu"></i>
+        </button>
+        <div class="nav__links" id="navLinks">
+          <a href="#brand">品牌实力</a>
+          <a href="#showroom">店内环境</a>
+          <a href="#products">产品中心</a>
+          <a href="#cases">应用案例</a>
+          <a href="#advantages">核心优势</a>
+          <a href="#contact" class="nav__action">
+            <i data-lucide="calendar-check"></i>
+            预约咨询
+          </a>
+        </div>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero" aria-label="金科瓷砖岩板无锡门店官网首屏">
+        <div class="hero__bg" data-parallax></div>
+        <div class="hero__texture"></div>
+        <div class="hero__inner">
+          <div class="reveal">
+            <span class="eyebrow">JINKe CERAMICS · 无锡新吴区门店</span>
+            <h1>金科瓷砖·岩板</h1>
+            <p class="hero__slogan">智造品质家居 · 焕新现代空间</p>
+            <p class="hero__copy">江苏省无锡市新吴区新世界D18栋-7号金科瓷砖店，提供热门瓷砖、岩板与工程项目选材方案。</p>
+            <div class="hero__actions">
+              <a class="btn btn--gold" href="#products">
+                探索产品
+                <i data-lucide="arrow-right"></i>
+              </a>
+              <a class="btn btn--ghost" href="#contact">
+                预约咨询
+                <i data-lucide="message-square"></i>
+              </a>
+            </div>
+          </div>
+          <div class="hero__proof reveal">
+            <div class="proof-item">
+              <strong data-count="180">180+</strong>
+              <span>选材与项目服务经验</span>
+            </div>
+            <div class="proof-item">
+              <strong data-count="36">36</strong>
+              <span>热门纹理与规格矩阵</span>
+            </div>
+            <div class="proof-item">
+              <strong data-count="6">6</strong>
+              <span>核心产品体系</span>
+            </div>
+          </div>
+        </div>
+        <div class="scroll-cue">SCROLL</div>
+      </section>
+
+      <section class="section section--light" id="brand">
+        <div class="section-inner">
+          <div class="section-head reveal">
+            <div>
+              <p class="section-kicker">BRAND POWER</p>
+              <h2 class="section-title">三十五载深耕建材行业，专注高品质瓷砖与岩板空间服务。</h2>
+            </div>
+            <p class="section-copy">无锡市喜临门建材有限公司深耕瓷砖建材行业35年，立足无锡新吴区，为家庭住宅、商业空间、酒店工程及地产项目客户提供专业选材与配套服务。</p>
+          </div>
+
+          <div class="brand-grid">
+            <div class="brand-story">
+              <article class="story-line reveal">
+                <span class="story-line__num">01</span>
+                <div>
+                  <h3>品牌故事</h3>
+                  <p>喜临门建材长期专注瓷砖与岩板选材服务，坚持以品质为核心、以服务为基础，把成熟的品牌产品、空间搭配建议与本地交付经验结合，为客户提供更省心的装修选材体验。</p>
+                </div>
+              </article>
+              <article class="story-line reveal">
+                <span class="story-line__num">02</span>
+                <div>
+                  <h3>企业实力</h3>
+                  <p>作为本地瓷砖经销服务商，门店经营广东佛山金科瓷砖、卡诺尔瓷砖等优质品牌，并配套高中低不同层次的瓷砖、岩板与工程产品，满足家装升级、设计师选材和项目采购需求。</p>
+                  <ul class="story-list">
+                    <li>主营岩板、通体大理石、现代素色砖、木纹砖、大规格瓷砖、防滑地砖与工程定制产品。</li>
+                    <li>产品覆盖住宅装修、商业空间、办公场所、酒店会所及工程项目等多元场景。</li>
+                  </ul>
+                </div>
+              </article>
+              <article class="story-line reveal">
+                <span class="story-line__num">03</span>
+                <div>
+                  <h3>金科品牌实力</h3>
+                  <p>广东金科陶瓷创立于2003年，总部位于中国陶瓷产业核心基地佛山南庄，是集研发、生产、销售于一体的现代化陶瓷企业。</p>
+                  <ul class="story-list">
+                    <li>产品涵盖岩板、大板、现代质感砖、通体大理石瓷砖等多个系列。</li>
+                    <li>依托现代化生产基地、自动化生产设备、研发中心与质量管理体系，持续推出符合市场需求的创新产品。</li>
+                  </ul>
+                </div>
+              </article>
+              <article class="story-line reveal">
+                <span class="story-line__num">04</span>
+                <div>
+                  <h3>现代化生产体系</h3>
+                  <p>从原材料采购、产品研发、生产制造到品质检测，金科陶瓷形成全流程管理体系，通过高吨位压机成型、高温智能烧制与多重品质检测，保障产品稳定交付。</p>
+                  <div class="brand-tags">
+                    <span>高平整度</span>
+                    <span>高耐磨性</span>
+                    <span>优异防污</span>
+                    <span>稳定抗压</span>
+                    <span>环保安全</span>
+                  </div>
+                </div>
+              </article>
+              <article class="story-line reveal">
+                <span class="story-line__num">05</span>
+                <div>
+                  <h3>品牌愿景</h3>
+                  <p>以品质铸造口碑，以服务赢得信赖。喜临门建材将继续以专业选材、稳定供货和细致售后服务，为客户打造更舒适、更美观、更具品质感的空间体验。</p>
+                </div>
+              </article>
+              <div class="brand-metrics reveal" aria-label="品牌关键数据">
+                <div class="brand-metric">
+                  <strong>35年</strong>
+                  <span>无锡喜临门建材行业经营积淀</span>
+                </div>
+                <div class="brand-metric">
+                  <strong>2003</strong>
+                  <span>广东金科陶瓷品牌创立年份</span>
+                </div>
+                <div class="brand-metric">
+                  <strong>7类</strong>
+                  <span>岩板、素色砖、木纹砖与工程定制等主营产品体系</span>
+                </div>
+              </div>
+            </div>
+            <div class="image-panel reveal">
+              <img src="./assets/brand/jinke-showroom-front.jpg" width="980" height="980" alt="金科瓷砖岩板无锡门店展厅外立面" loading="lazy" />
+              <div class="cert-strip" aria-label="品质认证">
+                <span>品质筑家</span>
+                <span>服务万家</span>
+                <span>佛山金科</span>
+                <span>无锡门店</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section--light showroom" id="showroom">
+        <div class="section-inner">
+          <div class="section-head reveal">
+            <div>
+              <p class="section-kicker">STORE GALLERY</p>
+              <h2 class="section-title">店内环境</h2>
+            </div>
+            <p class="section-copy">基于门店实拍素材，展示无锡金科瓷砖·岩板的外立面、选材通道、仓储现货与空间搭配参考。客户可到店看实物、摸质感、对比规格。</p>
+          </div>
+
+          <div class="showroom-grid">
+            <a class="showroom-card showroom-card--large reveal" href="./case.html?id=showroom" aria-label="查看金科瓷砖门店选样通道">
+              <img src="./assets/brand/store-polished-1.jpg" width="1280" height="1707" alt="金科瓷砖无锡门店前台与品牌墙实拍" loading="lazy" />
+              <div class="showroom-card__body">
+                <span>RECEPTION</span>
+                <h3>前台与品牌形象区</h3>
+                <p>进店第一眼即可看到品牌墙、接待台与灰白石纹地面，真实呈现门店的整洁度、光感和空间质感。</p>
+              </div>
+            </a>
+            <div class="showroom-stack">
+              <a class="showroom-card reveal" href="./case.html?id=showroom" aria-label="查看金科瓷砖门店前台">
+                <img src="./assets/brand/store-polished-6.jpg" width="1280" height="1707" alt="金科瓷砖无锡门店选样通道与洽谈区实拍" loading="lazy" />
+                <div class="showroom-card__body">
+                  <span>IN-STORE SELECTION</span>
+                  <h3>选样通道与洽谈区</h3>
+                </div>
+              </a>
+              <a class="showroom-card reveal" href="./case.html?id=showroom" aria-label="查看金科瓷砖门店样板走廊">
+                <img src="./assets/brand/store-polished-4.jpg" width="1280" height="1707" alt="金科瓷砖无锡门店大板样板走廊实拍" loading="lazy" />
+                <div class="showroom-card__body">
+                  <span>SLAB DISPLAY</span>
+                  <h3>大板样板走廊</h3>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section--dark" id="products">
+        <div class="section-inner">
+          <div class="section-head reveal">
+            <div>
+              <p class="section-kicker">PRODUCT CENTER</p>
+              <h2 class="section-title">产品中心</h2>
+            </div>
+            <p class="section-copy">首页保留门店主推系列，同时补回岩板大板、木纹砖、卫浴防滑砖等常用选材。状元真石釉与状元彩晶拆分为两个独立系列，客户可以按工艺、色系和空间需求快速选样。</p>
+          </div>
+
+          <div class="product-grid">
+            <a class="product-card product-card--hot reveal" data-tilt href="./product.html?id=cream-velvet" aria-label="查看奶油绒质感砖产品详情">
+              <span class="hot-ribbon">热门首推</span>
+              <div class="product-card__media">
+                <img src="./assets/products/cream-velvet.jpg?v=cream1" width="1100" height="760" alt="金科瓷砖奶油绒质感砖雅典娜奶黄样板" loading="lazy" />
+              </div>
+              <div class="product-card__shade"></div>
+              <div class="product-card__body">
+                <h3>奶油绒质感砖</h3>
+                <p>门店主推奶油绒质感砖，含雅纳特灰、宝莉拉灰、雅典娜奶黄、布鲁斯四款，适合全空间通铺。</p>
+                <div class="product-meta">
+                  <span>750x1500MM</span>
+                  <span>绒质柔光</span>
+                  <span>真实案例</span>
+                </div>
+              </div>
+            </a>
+
+            <a class="product-card product-card--hot reveal" data-tilt href="./product.html?id=gold-velvet" aria-label="查看臻白质感砖产品详情">
+              <span class="hot-ribbon">卡诺尔臻白</span>
+              <div class="product-card__media">
+                <img src="./assets/products/zhenbai-gubao-xiangya.jpg?v=focus1" width="1100" height="760" alt="卡诺尔臻白质感砖古堡象牙米白样板" loading="lazy" />
+              </div>
+              <div class="product-card__shade"></div>
+              <div class="product-card__body">
+                <h3>臻白质感砖</h3>
+                <p>卡诺尔臻白质感砖系列，古堡米黄、香槟米黄、橘黄、象牙米白等温润色系，适合全屋柔和铺贴。</p>
+                <div class="product-meta">
+                  <span>750x1500MM</span>
+                  <span>臻白质感</span>
+                  <span>温润色系</span>
+                </div>
+              </div>
+            </a>
+
+            <a class="product-card product-card--hot reveal" data-tilt href="./product.html?id=marble-look" aria-label="查看状元真石釉产品详情">
+              <span class="hot-ribbon">金科真石釉</span>
+              <div class="product-card__media">
+                <img src="./assets/products/marble-cloud-gray.jpg?v=focus1" width="1100" height="760" alt="金科瓷砖状元真石釉云灰样板" loading="lazy" />
+              </div>
+              <div class="product-card__shade"></div>
+              <div class="product-card__body">
+                <h3>状元真石釉</h3>
+                <p>真石釉肌理接近天然石材层次，适合背景墙、玄关主墙、客厅通铺与高端工程项目。</p>
+                <div class="product-meta">
+                  <span>真石釉</span>
+                  <span>天然石感</span>
+                  <span>背景墙</span>
+                </div>
+              </div>
+            </a>
+
+            <a class="product-card product-card--hot reveal" data-tilt href="./product.html?id=zhuangyuan-caijing" aria-label="查看状元彩晶产品详情">
+              <span class="hot-ribbon">金科主推</span>
+              <div class="product-card__media">
+                <img src="./assets/products/zhuangyuan-caijing.jpg" width="1100" height="760" alt="金科瓷砖状元彩晶瓷砖样板" loading="lazy" />
+              </div>
+              <div class="product-card__shade"></div>
+              <div class="product-card__body">
+                <h3>状元彩晶</h3>
+                <p>彩晶质感强化晶体层次与灯光表现，适合高端客厅、展厅主视觉、商业空间与工程项目。</p>
+                <div class="product-meta">
+                  <span>状元彩晶</span>
+                  <span>晶感层次</span>
+                  <span>金科主推</span>
+                </div>
+              </div>
+            </a>
+
+            <a class="product-card reveal" data-tilt href="./product.html?id=large-slab" aria-label="查看状元锦绣丝绒产品详情">
+              <div class="product-card__media">
+                <img src="./assets/products/gold-silk-silver.jpg?v=focus1" width="1100" height="760" alt="金科瓷砖状元锦绣丝绒样板" loading="lazy" />
+              </div>
+              <div class="product-card__shade"></div>
+              <div class="product-card__body">
+                <h3>状元锦绣丝绒</h3>
+                <p>丝绒柔光质感，光感更细腻克制，适合奶油风、现代极简、大平层和高端住宅通铺。</p>
+                <div class="product-meta">
+                  <span>柔光丝绒</span>
+                  <span>全屋通铺</span>
+                </div>
+              </div>
+            </a>
+
+            <a class="product-card reveal" data-tilt href="./product.html?id=engineering" aria-label="查看岩板大板产品详情">
+              <div class="product-card__media">
+                <img src="./assets/products/slab-stars-gray.jpg?v=series1" width="1100" height="760" alt="金科瓷砖岩板大板星耀灰样板" loading="lazy" />
+              </div>
+              <div class="product-card__shade"></div>
+              <div class="product-card__body">
+                <h3>岩板大板</h3>
+                <p>适合背景墙、台面、商业公区与别墅大面积铺贴，强调大规格连续纹理和空间完整度。</p>
+                <div class="product-meta">
+                  <span>大规格</span>
+                  <span>背景墙</span>
+                  <span>工程可选</span>
+                </div>
+              </div>
+            </a>
+
+            <a class="product-card reveal" data-tilt href="./product.html?id=wood-grain" aria-label="查看木纹砖产品详情">
+              <div class="product-card__media">
+                <img src="./assets/products/wood-grain.jpg" width="1100" height="760" alt="木纹砖自然木感样板" loading="lazy" />
+              </div>
+              <div class="product-card__shade"></div>
+              <div class="product-card__body">
+                <h3>木纹砖</h3>
+                <p>保留木质温度，同时拥有瓷砖耐用、防潮与易维护属性，适合卧室、阳台、书房与商业休闲区。</p>
+                <div class="product-meta">
+                  <span>原木质感</span>
+                  <span>防潮耐用</span>
+                </div>
+              </div>
+            </a>
+
+            <a class="product-card reveal" data-tilt href="./product.html?id=bathroom" aria-label="查看卫浴防滑砖产品详情">
+              <div class="product-card__media">
+                <img src="./assets/products/bathroom.jpg" width="1100" height="760" alt="卫浴防滑瓷砖石纹样板" loading="lazy" />
+              </div>
+              <div class="product-card__shade"></div>
+              <div class="product-card__body">
+                <h3>卫浴防滑砖</h3>
+                <p>面向卫生间、淋浴区、洗衣区与酒店湿区，兼顾防滑、防污、墙地一体和长期清洁效率。</p>
+                <div class="product-meta">
+                  <span>湿区适配</span>
+                  <span>防滑防污</span>
+                </div>
+              </div>
+            </a>
+
+          </div>
+        </div>
+      </section>
+
+      <section class="section section--dark cases" id="cases">
+        <div class="section-inner">
+          <div class="section-head reveal">
+            <div>
+              <p class="section-kicker">PROJECT GALLERY</p>
+              <h2 class="section-title">应用案例</h2>
+            </div>
+            <p class="section-copy">用材质和比例组织空间情绪，在别墅私宅、家装空间、商业空间与酒店工程中呈现不同维度的高级感。</p>
+          </div>
+
+          <div class="case-grid">
+            <a class="case-card reveal" href="./case.html?id=villa" aria-label="查看别墅私宅案例详情">
+              <div class="case-card__media">
+                <img class="case-card__image" src="./assets/cases/generated/project-villa.jpg?v=gen2" width="1200" height="900" alt="金科瓷砖别墅私宅深灰岩板客厅效果图" loading="lazy" />
+              </div>
+              <div class="case-card__body">
+                <span>VILLA RESIDENCE</span>
+                <h3>别墅私宅案例</h3>
+                <p>以深灰岩板与真石釉纹理组织挑空客厅，重点呈现背景墙、地面通铺和灯光下的石材层次。</p>
+                <div class="case-detail-row">
+                  <figure>
+                    <img src="./assets/cases/generated/project-villa-focus-wall.jpg?v=detail2" width="680" height="500" alt="别墅岩板背景墙放大细节效果图" loading="lazy" />
+                    <figcaption>挑空背景墙细节</figcaption>
+                  </figure>
+                  <figure>
+                    <img src="./assets/cases/generated/project-villa-focus-floor.jpg?v=detail2" width="680" height="500" alt="别墅客厅地面铺贴放大细节效果图" loading="lazy" />
+                    <figcaption>客厅地面细节</figcaption>
+                  </figure>
+                </div>
+              </div>
+            </a>
+            <a class="case-card reveal" href="./case.html?id=residential" aria-label="查看家装通铺案例详情">
+              <div class="case-card__media">
+                <img class="case-card__image" src="./assets/cases/generated/project-residential.jpg?v=gen2" width="1200" height="900" alt="金科瓷砖家装空间奶油柔光砖效果图" loading="lazy" />
+              </div>
+              <div class="case-card__body">
+                <span>HOME RENOVATION</span>
+                <h3>家装通铺案例</h3>
+                <p>用奶油绒、臻白质感与锦绣丝绒做全屋柔光基底，强化客餐厅、卧室和玄关之间的连续感。</p>
+                <div class="case-detail-row">
+                  <figure>
+                    <img src="./assets/cases/generated/project-residential-focus-living.jpg?v=detail2" width="680" height="500" alt="家装空间客餐厅局部搭配细节效果图" loading="lazy" />
+                    <figcaption>地面通铺细节</figcaption>
+                  </figure>
+                  <figure>
+                    <img src="./assets/cases/generated/project-residential-focus-floor.jpg?v=detail2" width="680" height="500" alt="家装空间地面通铺放大细节效果图" loading="lazy" />
+                    <figcaption>地面通铺细节</figcaption>
+                  </figure>
+                </div>
+              </div>
+            </a>
+            <a class="case-card reveal" href="./case.html?id=commercial" aria-label="查看商业展示案例详情">
+              <div class="case-card__media">
+                <img class="case-card__image" src="./assets/cases/generated/project-commercial.jpg?v=gen2" width="1200" height="900" alt="金科瓷砖商业空间岩板背景墙效果图" loading="lazy" />
+              </div>
+              <div class="case-card__body">
+                <span>COMMERCIAL SPACE</span>
+                <h3>商业展示案例</h3>
+                <p>前厅和展厅更重视第一眼材质记忆，适合状元彩晶、真石釉和大板岩板做主视觉面。</p>
+                <div class="case-detail-row">
+                  <figure>
+                    <img src="./assets/cases/generated/project-commercial-focus-wall.jpg?v=detail2" width="680" height="500" alt="商业空间背景墙放大细节效果图" loading="lazy" />
+                    <figcaption>前台岩板细节</figcaption>
+                  </figure>
+                  <figure>
+                    <img src="./assets/cases/generated/project-commercial-focus-floor.jpg?v=detail2" width="680" height="500" alt="商业空间地面铺贴放大细节效果图" loading="lazy" />
+                    <figcaption>接待区地面细节</figcaption>
+                  </figure>
+                </div>
+              </div>
+            </a>
+            <a class="case-card reveal" href="./case.html?id=hotel" aria-label="查看酒店工程案例详情">
+              <div class="case-card__media">
+                <img class="case-card__image" src="./assets/cases/generated/project-hotel.jpg?v=gen2" width="1200" height="900" alt="金科瓷砖酒店工程大堂效果图" loading="lazy" />
+              </div>
+              <div class="case-card__body">
+                <span>HOTEL PROJECT</span>
+                <h3>酒店工程案例</h3>
+                <p>酒店和公区强调耐磨、防污、批次稳定与灯光氛围，可按大堂、公区、湿区分层选材。</p>
+                <div class="case-detail-row">
+                  <figure>
+                    <img src="./assets/cases/generated/project-hotel-focus-wall.jpg?v=detail2" width="680" height="500" alt="酒店大堂墙面灯光放大细节效果图" loading="lazy" />
+                    <figcaption>大堂铺贴细节</figcaption>
+                  </figure>
+                  <figure>
+                    <img src="./assets/cases/generated/project-hotel-focus-floor.jpg?v=detail2" width="680" height="500" alt="酒店大堂地面铺贴放大细节效果图" loading="lazy" />
+                    <figcaption>大堂地面细节</figcaption>
+                  </figure>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section gradient-band" id="advantages">
+        <div class="section-inner">
+          <div class="section-head reveal">
+            <div>
+              <p class="section-kicker">CORE ADVANTAGES</p>
+              <h2 class="section-title">核心优势</h2>
+            </div>
+            <p class="section-copy">面向家装住宅、设计师选材和工程项目，金科瓷砖·岩板把产品花色、材料性能、环保标准与门店服务统一到同一套交付体系中。</p>
+          </div>
+
+          <div class="advantages-grid">
+            <article class="advantage reveal">
+              <i data-lucide="badge-check"></i>
+              <h3>国际工艺</h3>
+              <p>高温烧制与精密加工，呈现细腻纹理和稳定平整度。</p>
+            </article>
+            <article class="advantage reveal">
+              <i data-lucide="leaf"></i>
+              <h3>环保材料</h3>
+              <p>关注低碳、健康与长期使用安全，适合家庭与公区空间。</p>
+            </article>
+            <article class="advantage reveal">
+              <i data-lucide="shield"></i>
+              <h3>超强耐磨</h3>
+              <p>应对高频生活动线和商业场景，保持长久表面质感。</p>
+            </article>
+            <article class="advantage reveal">
+              <i data-lucide="droplets"></i>
+              <h3>防污防滑</h3>
+              <p>多种表面工艺适配干区、湿区、台面与公共空间。</p>
+            </article>
+            <article class="advantage reveal">
+              <i data-lucide="ruler"></i>
+              <h3>多种规格</h3>
+              <p>从常规瓷砖到大规格岩板，支持设计师灵活组合。</p>
+            </article>
+            <article class="advantage reveal">
+              <i data-lucide="truck"></i>
+              <h3>全国配送</h3>
+              <p>工程批量、门店选材与家装交付，提供稳定物流支持。</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section contact" id="contact">
+        <div class="section-inner">
+          <div class="section-head reveal">
+            <div>
+              <p class="section-kicker">CONTACT US</p>
+              <h2 class="section-title">联系我们</h2>
+            </div>
+            <p class="section-copy">欢迎到江苏省无锡市新吴区新世界D18栋-7号金科瓷砖店选样，电话咨询与到店预约均可。</p>
+          </div>
+
+          <div class="contact-grid">
+            <form class="form-card reveal" id="consultForm">
+              <div class="form-grid">
+                <div class="field">
+                  <label for="name">姓名</label>
+                  <input id="name" name="name" type="text" autocomplete="name" placeholder="您的姓名" required />
+                </div>
+                <div class="field">
+                  <label for="phone">电话</label>
+                  <input id="phone" name="phone" type="tel" autocomplete="tel" placeholder="手机或座机" required />
+                </div>
+                <div class="field">
+                  <label for="role">客户类型</label>
+                  <select id="role" name="role">
+                    <option>别墅业主</option>
+                    <option>设计师</option>
+                    <option>装修公司</option>
+                    <option>工程项目客户</option>
+                  </select>
+                </div>
+                <div class="field">
+                  <label for="space">空间需求</label>
+                  <select id="space" name="space">
+                    <option>全屋瓷砖与岩板</option>
+                    <option>客厅背景墙</option>
+                    <option>卫浴空间</option>
+                    <option>酒店/商业工程</option>
+                  </select>
+                </div>
+                <div class="field field--full">
+                  <label for="message">项目说明</label>
+                  <textarea id="message" name="message" placeholder="请简要描述面积、风格、预算或交付时间"></textarea>
+                </div>
+              </div>
+              <button class="btn btn--gold" type="submit">
+                提交预约
+                <i data-lucide="send"></i>
+              </button>
+              <p class="form-note" id="formNote" role="status"></p>
+            </form>
+
+            <aside class="contact-card reveal">
+              <div class="contact-info">
+                <div class="contact-list">
+                  <div class="contact-line">
+                    <i data-lucide="phone"></i>
+                    <div>
+                      <span>门店电话</span>
+                      <strong>13861735222</strong>
+                    </div>
+                  </div>
+                  <div class="contact-line">
+                    <i data-lucide="mail"></i>
+                    <div>
+                      <span>服务门店</span>
+                      <strong>金科瓷砖·岩板无锡店</strong>
+                    </div>
+                  </div>
+                  <div class="contact-line">
+                    <i data-lucide="map-pin"></i>
+                    <div>
+                      <span>展厅位置</span>
+                      <strong>江苏省无锡市新吴区新世界D18栋-7号</strong>
+                    </div>
+                  </div>
+                </div>
+                <div class="qr-box">
+                  <div id="wechatQr" aria-label="金科瓷砖微信咨询二维码">
+                    <img src="./assets/wechat-qr.png?v=3" width="160" height="160" alt="金科瓷砖微信咨询二维码" />
+                  </div>
+                  <p>微信扫码<br />预约选材顾问</p>
+                </div>
+              </div>
+              <div class="map-panel" aria-label="金科瓷砖无锡门店地图位置示意">
+                <div class="map-route"></div>
+                <div class="map-pin">
+                  <i data-lucide="map-pin"></i>
+                </div>
+                <div class="map-caption">
+                  <strong>无锡新吴区门店</strong>
+                  新世界D18栋-7号金科瓷砖店
+                </div>
+              </div>
+            </aside>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer__inner">
+        <span>© <span id="year"></span> 金科瓷砖·岩板 JINKe CERAMICS</span>
+        <span>江苏省无锡市新吴区新世界D18栋-7号 · 13861735222</span>
+      </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+    <script src="./assets/vendor/lucide.min.js" defer></script>
+    <script>
+      window.addEventListener("load", () => {
+        window.setTimeout(() => document.getElementById("loader").classList.add("is-hidden"), 420);
+      });
+
+      document.addEventListener("DOMContentLoaded", () => {
+        const header = document.getElementById("siteHeader");
+        const menuToggle = document.getElementById("menuToggle");
+        const navLinks = document.getElementById("navLinks");
+        const cursorLight = document.getElementById("cursorLight");
+        const form = document.getElementById("consultForm");
+        const formNote = document.getElementById("formNote");
+        const year = document.getElementById("year");
+
+        year.textContent = new Date().getFullYear();
+
+        const updateHeader = () => {
+          header.classList.toggle("is-scrolled", window.scrollY > 24);
+        };
+        updateHeader();
+        window.addEventListener("scroll", updateHeader, { passive: true });
+
+        menuToggle.addEventListener("click", () => {
+          navLinks.classList.toggle("is-open");
+          const icon = menuToggle.querySelector("i");
+          icon.setAttribute("data-lucide", navLinks.classList.contains("is-open") ? "x" : "menu");
+          if (window.lucide) window.lucide.createIcons();
+        });
+
+        navLinks.querySelectorAll("a").forEach((link) => {
+          link.addEventListener("click", () => navLinks.classList.remove("is-open"));
+        });
+
+        document.addEventListener("pointermove", (event) => {
+          if (window.matchMedia("(max-width: 640px)").matches) return;
+          cursorLight.style.opacity = "1";
+          cursorLight.style.transform = `translate3d(${event.clientX}px, ${event.clientY}px, 0) translate(-50%, -50%)`;
+        });
+        document.addEventListener("pointerleave", () => {
+          cursorLight.style.opacity = "0";
+        });
+
+        document.querySelectorAll("[data-tilt]").forEach((card) => {
+          card.addEventListener("pointermove", (event) => {
+            const rect = card.getBoundingClientRect();
+            const x = (event.clientX - rect.left) / rect.width - 0.5;
+            const y = (event.clientY - rect.top) / rect.height - 0.5;
+            card.style.transform = `perspective(1100px) rotateX(${(-y * 7).toFixed(2)}deg) rotateY(${(x * 7).toFixed(2)}deg) translateY(-8px)`;
+          });
+          card.addEventListener("pointerleave", () => {
+            card.style.transform = "";
+          });
+        });
+
+        form.addEventListener("submit", (event) => {
+          event.preventDefault();
+          formNote.textContent = "预约已提交，金科瓷砖门店顾问将尽快与您联系。";
+          form.reset();
+        });
+
+        if (window.lucide) window.lucide.createIcons();
+
+        const animateNumbers = () => {
+          document.querySelectorAll("[data-count]").forEach((node) => {
+            const target = Number(node.dataset.count);
+            const suffix = node.textContent.includes("+") ? "+" : "";
+            let current = 0;
+            const step = Math.max(1, Math.round(target / 42));
+            const timer = window.setInterval(() => {
+              current += step;
+              if (current >= target) {
+                current = target;
+                window.clearInterval(timer);
+              }
+              node.textContent = `${current}${suffix}`;
+            }, 26);
+          });
+        };
+
+        if (window.gsap && window.ScrollTrigger) {
+          gsap.registerPlugin(ScrollTrigger);
+
+          gsap.to(".hero__bg", {
+            yPercent: 9,
+            scale: 1.1,
+            ease: "none",
+            scrollTrigger: {
+              trigger: ".hero",
+              start: "top top",
+              end: "bottom top",
+              scrub: true
+            }
+          });
+
+          gsap.utils.toArray(".reveal").forEach((item) => {
+            gsap.fromTo(
+              item,
+              { autoAlpha: 0, y: 46 },
+              {
+                autoAlpha: 1,
+                y: 0,
+                duration: 1,
+                ease: "power3.out",
+                scrollTrigger: {
+                  trigger: item,
+                  start: "top 86%",
+                  once: true
+                }
+              }
+            );
+          });
+
+          gsap.utils.toArray(".advantage").forEach((item, index) => {
+            gsap.to(item, {
+              y: index % 2 === 0 ? -10 : 10,
+              ease: "none",
+              scrollTrigger: {
+                trigger: "#advantages",
+                start: "top bottom",
+                end: "bottom top",
+                scrub: true
+              }
+            });
+          });
+
+          ScrollTrigger.create({
+            trigger: ".hero__proof",
+            start: "top 80%",
+            once: true,
+            onEnter: animateNumbers
+          });
+        } else {
+          const revealItems = document.querySelectorAll(".reveal");
+          if ("IntersectionObserver" in window) {
+            const revealObserver = new IntersectionObserver(
+              (entries) => {
+                entries.forEach((entry) => {
+                  if (!entry.isIntersecting) return;
+                  entry.target.classList.add("is-visible");
+                  revealObserver.unobserve(entry.target);
+                });
+              },
+              { threshold: 0.16, rootMargin: "0px 0px -8% 0px" }
+            );
+            revealItems.forEach((item) => revealObserver.observe(item));
+          } else {
+            revealItems.forEach((item) => item.classList.add("is-visible"));
+          }
+
+          const heroBg = document.querySelector(".hero__bg");
+          let ticking = false;
+          const fallbackParallax = () => {
+            const y = Math.min(90, window.scrollY * 0.09);
+            heroBg.style.transform = `translateY(${y}px) scale(1.08)`;
+            ticking = false;
+          };
+          window.addEventListener(
+            "scroll",
+            () => {
+              if (ticking) return;
+              ticking = true;
+              window.requestAnimationFrame(fallbackParallax);
+            },
+            { passive: true }
+          );
+
+          const proof = document.querySelector(".hero__proof");
+          if ("IntersectionObserver" in window && proof) {
+            const countObserver = new IntersectionObserver(
+              (entries) => {
+                if (!entries.some((entry) => entry.isIntersecting)) return;
+                animateNumbers();
+                countObserver.disconnect();
+              },
+              { threshold: 0.35 }
+            );
+            countObserver.observe(proof);
+          } else {
+            animateNumbers();
+          }
+        }
+      });
+    </script>
+  </body>
+</html>
