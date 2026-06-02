@@ -1436,6 +1436,10 @@
         font-size: 14px;
       }
 
+      .hidden-field {
+        display: none;
+      }
+
       .footer {
         border-top: 1px solid rgba(255, 255, 255, 0.11);
         padding: 30px 0;
@@ -2310,7 +2314,12 @@
           </div>
 
           <div class="contact-grid">
-            <form class="form-card reveal" id="consultForm">
+            <form class="form-card reveal" id="consultForm" name="consultation" method="POST" data-netlify="true" netlify-honeypot="website">
+              <input type="hidden" name="form-name" value="consultation" />
+              <input type="hidden" name="recipient_email" value="2637481884@qq.com" />
+              <p class="hidden-field" aria-hidden="true">
+                <label>网站地址 <input name="website" tabindex="-1" autocomplete="off" /></label>
+              </p>
               <div class="form-grid">
                 <div class="field">
                   <label for="name">姓名</label>
@@ -2462,10 +2471,22 @@
           });
         });
 
-        form.addEventListener("submit", (event) => {
+        form.addEventListener("submit", async (event) => {
           event.preventDefault();
-          formNote.textContent = "预约已提交，金科瓷砖门店顾问将尽快与您联系。";
-          form.reset();
+          formNote.textContent = "正在提交预约信息...";
+
+          try {
+            const formData = new FormData(form);
+            await fetch("/", {
+              method: "POST",
+              headers: { "Content-Type": "application/x-www-form-urlencoded" },
+              body: new URLSearchParams(formData).toString()
+            });
+            formNote.textContent = "预约已提交，金科瓷砖门店顾问将尽快与您联系。";
+            form.reset();
+          } catch (error) {
+            formNote.textContent = "提交暂时失败，请直接致电 13861735222 或扫码添加微信咨询。";
+          }
         });
 
         if (window.lucide) window.lucide.createIcons();
